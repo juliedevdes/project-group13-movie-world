@@ -1,0 +1,27 @@
+.modal {
+  @media screen and (min-width: 768px) {
+    width: 280px;
+    height: 958px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 48px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 618px;
+    height: 562px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 882px;
+    height: 568px;
+    margin-top: 50px;
+  }
+}
+
+// .modal__close-icon {
+//   fill: $accent-color;
+// }
