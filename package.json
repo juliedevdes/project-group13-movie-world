@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "The website’s aim is to give a user info about a desired movie by searching its title. We also give users a good opportunity to keep the list of movies they either watched or bookmark to get back later.",
   "main": "index.js",
-  "homepage": "https://leroviten.github.io/movieworld",
+  "homepage": "https://leroviten.github.io/project-group13-movie-world",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /movieworld/"
+    "build": "parcel build src/*.html --public-url /project-group13-movie-world/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leroviten/movieworld.git"
+    "url": "git+https://github.com/leroviten/project-group13-movie-world.git"
   },
   "keywords": [],
   "author": "GoIT Team's 13 project",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/leroviten/movieworld/issues"
+    "url": "https://github.com/leroviten/project-group13-movie-world/issues"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
