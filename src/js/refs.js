@@ -1,5 +1,5 @@
-const modalContainer = document.querySelector('.modal__container');
+const modalOpen = document.querySelector('.modal-open');
 
 export default {
-  modalContainer,
+  modalOpen,
 };

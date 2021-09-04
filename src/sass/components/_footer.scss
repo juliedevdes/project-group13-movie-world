@@ -1,0 +1,60 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.page-footer {
+  background-color: $footer-bg-color;
+}
+
+/*====heart icon and it's animation====*/
+@keyframes beat {
+  to {
+    transform: scale(1.4);
+  }
+}
+
+.footer-heart-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  animation: beat 0.25s infinite alternate;
+  transform-origin: center;
+}
+/*====heart end=====*/
+
+.footer-btn {
+  color: $footer-text-color;
+  border: none;
+  background-color: unset;
+  text-decoration: underline;
+  transition: color 250ms linear;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    cursor: pointer;
+  }
+}
+
+.footer-text {
+  text-align: center;
+  color: $footer-text-color;
+  line-height: 34px;
+  font-size: 14px;
+}
+.footer-text--down {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .footer-text {
+    line-height: 14px;
+    font-size: 16px;
+    max-width: unset;
+  }
+  .footer-text--down {
+    display: unset;
+  }
+}
+
+// @media screen and (min-width: 1024px) {
+// }
