@@ -1,5 +1,4 @@
 // Класс для <ul> карточек галери
-
 .gallery__list {
   margin-top: -20px;
   @media screen and(min-width: 768px) {
@@ -11,13 +10,10 @@
 }
 
 // Класс для <li> карточек галери
-
 .gallery__list__elem {
-  height: 440px; // размер для наглядного тестирования. УДАЛИТЬ!!
   display: flex;
 
   margin-top: 20px;
-  // background-color: blue; // цвет карточки для наглядного тестирования. УДАЛИТЬ!!
   flex-basis: calc(100% / 3 - 30px);
 
   @media screen and(min-width: 768px) {
