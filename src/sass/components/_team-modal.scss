@@ -1,0 +1,60 @@
+.team-modal {
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.team-modal__img {
+  max-height: 140px;
+  display: block;
+  border-radius: 5px;
+}
+.team-modal__list__item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.team-modal__icon {
+  fill: $secondary-font-color;
+  display: inline-block;
+  transition: fill 250ms linear;
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+    cursor: pointer;
+  }
+}
+.team-modal__soc-link {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.team-modal__list--side-info {
+  margin-left: 10px;
+}
+.team-modal__role-title {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  color: $secondary-font-color;
+  margin-bottom: 5px;
+}
+
+.team-modal__name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+.team-modal__quote {
+  font-size: 12px;
+  color: $secondary-font-color;
+  margin-bottom: 10px;
+}
+.team-modal__title {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 25px;
+}
