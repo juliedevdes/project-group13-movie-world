@@ -9,3 +9,4 @@ import search from './js/search';
 import startpage from './js/startpage';
 import watched from './js/watched';
 import addWatched from './js/add-watched';
+import theme from './js/theme';

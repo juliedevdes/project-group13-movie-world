@@ -1,8 +1,31 @@
 <header class="page-header">
+  <div class="toolbar">
+    <div class="theme-switch">
+      <svg class="theme-switch__icon" role="img" aria-label="Sun icon">
+        <use href="./images/sprite.svg#sun"></use>
+      </svg>
+
+      <div class="theme-switch__control">
+        <input
+          class="theme-switch__toggle"
+          type="checkbox"
+          name="theme"
+          id="theme-switch-toggle"
+          aria-label="Switch between light and dark theme"
+        />
+        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div>
+      </div>
+
+      <svg class="theme-switch__icon" aria-label="Moon icon">
+        <use href="./images/sprite.svg#moon"></use>
+      </svg>
+    </div>
+  </div>
   <div class="container header-container">
     <div class="header-top">
       <a class="logo header-top__link-logo link" href="./index.html">
-        <img src="./images/planet-logo.png" alt="company logo" class="header-top__logo-image">
+        <img src="./images/planet-logo.png" alt="company logo" class="header-top__logo-image" />
         <span class="header-top__logo-name">MovieWorld</span>
       </a>
       <nav class="nav header-top__nav">
@@ -20,12 +43,17 @@
     </div>
     <div class="header-search">
       <form class="js-search-form">
-        <input type="text" class="header-search__search-field search__input" placeholder="Search a movie" data-input="input" />
+        <input
+          type="text"
+          class="header-search__search-field search__input"
+          placeholder="Search a movie"
+          data-input="input"
+        />
         <span class="header-search__search-icon"></span>
       </form>
       <p class="no-success" id="notify-text"></p>
 
-      <ul class="btn-list  visually-hidden list" data-button-list-header="watched-and-queue">
+      <ul class="btn-list visually-hidden list" data-button-list-header="watched-and-queue">
         <li class="btn-list__item">
           <button class="btn-list__header accent libr-watched">WATCHED</button>
         </li>

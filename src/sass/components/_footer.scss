@@ -4,8 +4,18 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.page-footer {
+// .page-footer {
+//   background-color: $footer-bg-color;
+// }
+
+.page-footer.light-theme {
   background-color: $footer-bg-color;
+  color: #000;
+}
+
+.page-footer.dark-theme {
+  background-color: #292929;
+  color: #fff;
 }
 
 /*====heart icon and it's animation====*/
@@ -36,9 +46,13 @@
   }
 }
 
+.page-footer.dark-theme.footer-btn {
+  color: $white-color;
+}
+
 .footer-text {
   text-align: center;
-  color: $footer-text-color;
+  // color: $footer-text-color;
   line-height: 34px;
   font-size: 14px;
 }
