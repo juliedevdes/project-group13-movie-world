@@ -6,45 +6,20 @@
 }
 .page-footer {
   background-color: $footer-bg-color;
-
-  //animation of ♥ icon relates on footer hover
-  &:hover .footer-heart-icon {
-    position: relative;
-    transform: rotate(45deg);
-    animation: animateHeart 1.2s infinite;
-  }
-  &:hover .footer-btn {
-    color: $accent-color;
-    cursor: pointer;
-  }
 }
 
 /*====heart icon and it's animation====*/
-@keyframes animateHeart {
-  0% {
-    transform: scale(0.8);
-  }
-  5% {
-    transform: scale(0.9);
-  }
-  10% {
-    transform: scale(0.8);
-  }
-  15% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.8);
-  }
-  100% {
-    transform: scale(0.8);
+@keyframes beat {
+  to {
+    transform: scale(1.4);
   }
 }
 
 .footer-heart-icon {
   margin-left: 10px;
   margin-right: 10px;
-  transition: transform 250ms linear;
+  animation: beat 0.25s infinite alternate;
+  transform-origin: center;
 }
 /*====heart end=====*/
 
@@ -54,8 +29,10 @@
   background-color: unset;
   text-decoration: underline;
   transition: color 250ms linear;
+  &:hover,
   &:focus {
     color: $accent-color;
+    cursor: pointer;
   }
 }
 
