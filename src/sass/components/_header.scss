@@ -17,8 +17,6 @@
     min-width: 1024px;
   }
 
-  // min-height: 230px;
-  // max-width: 1600px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -31,16 +29,15 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 41px;
-  // padding-top: 41px;
-  // padding-bottom: 37px;
 
   &__link-logo {
     text-decoration: none;
     display: flex;
+    align-items: center;
   }
 
   &__logo-image {
-    height: 24px;
+    height: 32px;
     margin-right: 10px;
   }
 
@@ -104,57 +101,6 @@
   background-size: cover;
 }
 
-// .header-top {
-//   padding-top: 41px;
-//   margin-bottom: 37px;
-//   display: flex;
-//   justify-content: space-between;
-
-//   &__link-logo {
-//     text-decoration: none;
-//     display: flex;
-//   }
-
-//   &__logo-image {
-//     height: 24px;
-//     margin-right: 10px;
-//   }
-
-//   &__logo-name {
-//     font-size: 30px;
-//     color: #ffffff;
-//     line-height: 35.16px;
-//     text-align: center;
-
-//     @media screen and (max-width: 767px) {
-//       display: none;
-//     }
-//   }
-
-//   /* navigation */
-//   &__nav-list {
-//     list-style: none;
-//     display: flex;
-//     margin-bottom: 0;
-//   }
-
-//   &__nav-item:not(:last-child) {
-//     margin-right: 39px;
-//   }
-
-//   &__nav-link {
-//     color: white;
-//     outline-style: none;
-//     text-decoration: none;
-//     font-weight: 500;
-//     font-size: 12px;
-//     line-height: 14.06px;
-//     background-color: transparent;
-//     outline: none;
-//     border: none;
-//   }
-// }
-
 .is-active::after {
   display: block;
   content: '';
@@ -194,15 +140,6 @@
       line-height: 1.14;
       caret-color: #ffffff;
     }
-
-    // &.not-visible {
-    //   display: none;
-    // }
-
-    // &:focus::-webkit-input-placeholder {
-    //   text-indent: 500px;
-    //   transition: text-indent 0.3s ease;
-    // }
   }
 
   &__search-icon {
@@ -232,7 +169,6 @@
   text-align: left;
 
   &.no-success {
-    // margin-top: 22px;
     color: #ff001b;
   }
 }
