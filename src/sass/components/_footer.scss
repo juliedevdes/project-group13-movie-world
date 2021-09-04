@@ -1,0 +1,83 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.page-footer {
+  background-color: $footer-bg-color;
+
+  //animation of ♥ icon relates on footer hover
+  &:hover .footer-heart-icon {
+    position: relative;
+    transform: rotate(45deg);
+    animation: animateHeart 1.2s infinite;
+  }
+  &:hover .footer-btn {
+    color: $accent-color;
+    cursor: pointer;
+  }
+}
+
+/*====heart icon and it's animation====*/
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.8);
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  15% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.footer-heart-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 250ms linear;
+}
+/*====heart end=====*/
+
+.footer-btn {
+  color: $footer-text-color;
+  border: none;
+  background-color: unset;
+  text-decoration: underline;
+  transition: color 250ms linear;
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.footer-text {
+  text-align: center;
+  color: $footer-text-color;
+  line-height: 34px;
+  font-size: 14px;
+}
+.footer-text--down {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .footer-text {
+    line-height: 14px;
+    font-size: 16px;
+    max-width: unset;
+  }
+  .footer-text--down {
+    display: unset;
+  }
+}
+
+// @media screen and (min-width: 1024px) {
+// }
