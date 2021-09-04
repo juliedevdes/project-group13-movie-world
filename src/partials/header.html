@@ -1,5 +1,43 @@
 <header class="page-header">
-  <div class="container">
-    <h1>hello!</h1>
+  <div class="container header-container">
+    <div class="header-top">
+      <a class="logo header-top__link-logo link" href="./index.html">
+        <img src="./images/planet-logo.png" alt="company logo" class="header-top__logo-image">
+        <span class="header-top__logo-name">MovieWorld</span>
+      </a>
+      <nav class="nav header-top__nav">
+        <ul class="header-top__nav-list list">
+          <li class="header-top__nav-item">
+            <a class="header-top__nav-current header-top__nav-link link" href="./index.html">HOME</a>
+          </li>
+          <li class="header-top__nav-item">
+            <button class="header-top__nav-btn header-top__my-library" data-choice="my-library">
+              MY LIBRARY
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-search">
+      <form class="js-search-form">
+        <input type="text" class="header-search__search-field" placeholder="Search a movie" data-input="input" />
+        <span class="header-search__search-icon"></span>
+      </form>
+      <p class="no-success" id="notify-text"></p>
+
+      <ul class="btn-list  visually-hidden list" data-button-list-header="watched-and-queue">
+        <li class="btn-list__item">
+          <button class="btn-list__header accent libr-watched">WATCHED</button>
+        </li>
+        <li class="btn-list__item">
+          <button class="btn-list__header primary-white libr-queue">QUEUE</button>
+        </li>
+      </ul>
+    </div>
+
+    
+    <!-- <svg class="header__icon-search" width="12" height="12">
+      <use href="./images/sprite.svg#icon-search"></use>
+    </svg> -->
   </div>
 </header>
