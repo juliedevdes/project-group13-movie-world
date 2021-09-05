@@ -36,3 +36,7 @@ body {
   font-family: $main-font;
   background-color: $white-color;
 }
+
+html {
+  scroll-behavior: smooth;
+}
