@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import 'animate.css';
 
 import onOpenModal from './js/modal-lightbox';
 import refs from './js/refs';
