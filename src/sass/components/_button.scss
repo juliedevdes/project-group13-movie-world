@@ -1,0 +1,28 @@
+.button {
+  display: block;
+  width: 130px;
+  height: 44px;
+  background-color: Transparent;
+  border: 1px solid $white-color;
+  border-radius: 5px;
+  color: $white-color;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  transition: all $transition-duration $transition-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-color;
+    border: 1px solid $accent-color;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 136px;
+    height: 44px;
+  }
+}
