@@ -1,6 +1,45 @@
 <header class="page-header">
+<<<<<<< Updated upstream
   <div class="container">
     <h1>hello!</h1>
     <input type="text" class = "search__input" placeholder="Search movie by name..." >
+=======
+  <div class="container header-container">
+    <div class="header-top">
+      <a class="logo header-top__link-logo link" href="./index.html">
+        <img src="./images/planet-logo.png" alt="company logo" class="header-top__logo-image">
+        <span class="header-top__logo-name">MovieWorld</span>
+      </a>
+      <nav class="nav header-top__nav">
+        <ul class="header-top__nav-list list">
+          <li class="header-top__nav-item">
+            <a class="header-top__nav-link is-active link" href="./index.html">HOME</a>
+          </li>
+          <li class="header-top__nav-item">
+            <button class="header-top__nav-link header-top__my-library" data-choice="my-library">
+              MY LIBRARY
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-search">
+      <form class="js-search-form">
+        <input type="text" class="header-search__search-field search__input" placeholder="Search a movie" data-input="input" />
+        <span class="header-search__search-icon"></span>
+      </form>
+      <p class="no-success" id="notify-text"></p>
+      <p class="success" id="notify-text"></p>
+
+      <ul class="btn-list  visually-hidden list" data-button-list-header="watched-and-queue">
+        <li class="btn-list__item">
+          <button class="btn-list__header accent libr-watched">WATCHED</button>
+        </li>
+        <li class="btn-list__item">
+          <button class="btn-list__header primary-white libr-queue">QUEUE</button>
+        </li>
+      </ul>
+    </div>
+>>>>>>> Stashed changes
   </div>
 </header>
