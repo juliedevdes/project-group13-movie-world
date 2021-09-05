@@ -5,6 +5,7 @@
 
 import { gallery } from './refs';
 import renderGallery from './render-gallery';
+import getWatched from './get-watched';
 
 // === \/\/\/\/ пробная кнопка пока нет модалки \/\/\/\/ ===
 const renderBtn =
@@ -67,7 +68,6 @@ function renderWatched() {
   watchedBtn.addEventListener('click', onWatchedClick);
 
   function onWatchedClick() {
-    const watchedMoviess = JSON.parse(localStorage.getItem('watchedMovies'));
-    renderGallery(watchedMoviess);
+    renderGallery(getWatched());
   }
 }
