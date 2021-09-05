@@ -1,0 +1,12 @@
+{{#each this}}
+<li class="gallery__list__elem">
+  <div class="movie-card">
+    <img class="poster" src="https://image.tmdb.org/t/p/w300/{{poster_path}}" loading="lazy" alt="" data-id={{id}}
+      onerror="this.onerror=null;this.src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-' " />
+    <div class="movie-details">
+      <p class="movie-name">{{original_title}}</p>
+      <p class="movie-info">{{genre_ids}} | {{release_date}}</p>
+    </div>
+  </div>
+</li>
+{{/each}}

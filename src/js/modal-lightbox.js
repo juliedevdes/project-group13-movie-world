@@ -4,7 +4,7 @@ export default function onOpenModal(event) {
   const dataImgSource = event.target.dataset.src;
   console.log(dataImgSource);
 
-  if (event.target.nodeName !== 'IMG') {
+  if ((event.classList = modalOpen)) {
     return;
   }
 
@@ -13,7 +13,7 @@ export default function onOpenModal(event) {
   <div class="modal">
     <button class="modal__close-btn">
             <svg class="modal__close-icon" width="30" height="30">
-                <use href=""></use>
+                <use href="./sprite/sprite.svg#icon-close"></use>
             </svg>
         </button>
     <a>Close</a>
