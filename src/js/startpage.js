@@ -20,6 +20,9 @@ async function startPage() {
     }
     clearInput();
     createCard(movies);
+    api.fetchGenre();
+    
+  
   } catch (error) {}
 }
 
