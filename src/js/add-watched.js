@@ -2,7 +2,7 @@ import { gallery } from './refs';
 
 // === \/\/\/\/ пробная кнопка пока нет модалки \/\/\/\/ ===
 const renderBtn =
-  '<button class="add-watched-btn" style="margin: 15px" type="button" id="add-watched-btn">ADD TO WATCHED</button>';
+  '<button class="add-watched-btn"  style="margin: 15px" type="button" id="add-watched-btn"></button>';
 gallery.insertAdjacentHTML('afterend', renderBtn);
 // === /\/\/\/\ пробная кнопка пока нет модалки /\/\/\/\ ===
 // === \/\/\/\/ тестовые даные о фильме пока нет модалики. Будем получать из event при открытии карточки фильма \/\/\/\/ ===
