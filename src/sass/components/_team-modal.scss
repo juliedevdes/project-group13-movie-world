@@ -6,7 +6,8 @@
 }
 
 .team-modal__img {
-  max-height: 140px;
+  min-height: 140px;
+  min-width: 80px;
   display: block;
   border-radius: 5px;
 }
@@ -69,4 +70,10 @@
 }
 // .team-modal__close-icon {
 //   fill: $black-color;
+// }
+
+@media screen and (min-width: 768px) {
+}
+
+// @media screen and (min-width: 1024px) {
 // }
