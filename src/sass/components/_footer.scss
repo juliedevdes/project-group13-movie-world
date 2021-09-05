@@ -15,7 +15,7 @@
   }
 }
 
-.footer-heart-icon {
+.footer__heart-icon {
   margin-left: 10px;
   margin-right: 10px;
   animation: beat 0.25s infinite alternate;
@@ -23,7 +23,7 @@
 }
 /*====heart end=====*/
 
-.footer-btn {
+.footer__btn {
   color: $footer-text-color;
   border: none;
   background-color: unset;
@@ -36,22 +36,22 @@
   }
 }
 
-.footer-text {
+.footer__text {
   text-align: center;
   color: $footer-text-color;
   line-height: 34px;
   font-size: 14px;
 }
-.footer-text--down {
+.footer__text--down {
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .footer-text {
+  .footer__text {
     line-height: 14px;
     font-size: 16px;
     max-width: unset;
   }
-  .footer-text--down {
+  .footer__text--down {
     display: unset;
   }
 }
