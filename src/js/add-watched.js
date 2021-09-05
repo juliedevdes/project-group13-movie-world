@@ -1,11 +1,8 @@
-import { gallery } from './refs';
+import { gallery, addWatchedBtn } from './refs';
+import getWatched from './get-watched';
+import renderWatchedBtn from './render-watched-btn';
+import isWatched from './is-watched';
 
-// === \/\/\/\/ пробная кнопка пока нет модалки \/\/\/\/ ===
-const renderBtn =
-  '<button class="add-watched-btn"  style="margin: 15px" type="button" id="add-watched-btn"></button>';
-gallery.insertAdjacentHTML('afterend', renderBtn);
-// === /\/\/\/\ пробная кнопка пока нет модалки /\/\/\/\ ===
-// === \/\/\/\/ тестовые даные о фильме пока нет модалики. Будем получать из event при открытии карточки фильма \/\/\/\/ ===
 let currentMovie = {
   adult: false,
   backdrop_path: '/hRMfgGFRAZIlvwVWy8DYJdLTpvN.jpg',
@@ -17,7 +14,7 @@ let currentMovie = {
     { id: 35, name: 'Comedy' },
   ],
   homepage: 'https://www.amazon.com/dp/B097YYZ87F',
-  id: 593910,
+  id: 593911,
   imdb_id: 'tt10155932',
   original_language: 'en',
   original_title: 'Cinderella',
@@ -53,8 +50,11 @@ let currentMovie = {
 };
 // === /\/\/\/\ тестовые даные о фильме пока нет модалики. Будем получать из event при открытии карточки фильма /\/\/\/\ ===
 
-const addWatchedBtn = document.getElementById('add-watched-btn');
+const id = currentMovie.id;
 
+//!!!!!!!!!!!!!!!!! id берем с карточки текущего фильма!!!!!!!!!!!!
+
+renderWatchedBtn(id);
 addWatchedBtn.addEventListener('click', onAddWatchedClick);
 let watchedMovies = [];
 
@@ -63,10 +63,19 @@ function onAddWatchedClick() {
     watchedMovies = [];
   }
   if (localStorage.getItem('watchedMovies') !== null) {
-    watchedMovies = JSON.parse(localStorage.getItem('watchedMovies'));
+    watchedMovies = getWatched();
   }
-
+  if (isWatched(id)) {
+    let index = watchedMovies.findIndex((element, index, array) => {
+      return element.id === id;
+    });
+    watchedMovies.splice(index, 1);
+    localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+    addWatchedBtn.classList.toggle('watched');
+    return;
+  }
   watchedMovies.push(currentMovie);
   console.log(watchedMovies);
   localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+  addWatchedBtn.classList.toggle('watched');
 }

@@ -1,11 +1,9 @@
-import getWatched from './get-watched';
-// export default function {
-//     if () {
+import isWatched from './is-watched';
+import { addWatchedBtn } from './refs';
 
-//        addWatchedBtn.classList.toggle('watched');
-// }
-
-console.dir(getWatched());
-// this.classList.toggle('watched');
-
-// }
+export default function renderWatchedBtn(id) {
+  if (isWatched(id)) {
+    addWatchedBtn.classList.toggle('watched');
+    console.log(id);
+  }
+}
