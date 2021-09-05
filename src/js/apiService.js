@@ -41,14 +41,18 @@ export default {
   //Поиск по жанрам (для модалки выводит инфо конкретного фильма)
   async fetchGenre() {
     try {
-      const { genres } = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,);
-     
-      return genres;
       
+      const genres = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,);
+       
+      return genres.data;
+      
+   
     } catch (error) {
       console.error('Error with Genres' + error);
+      
+
     }
   }
  
 };
-
+ 
