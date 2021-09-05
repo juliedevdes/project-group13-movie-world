@@ -12,7 +12,9 @@
 }
 .team-modal__list__item {
   display: flex;
-  margin-bottom: 20px;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 .team-modal__icon {
@@ -58,3 +60,13 @@
   line-height: 26px;
   margin-bottom: 25px;
 }
+
+.team-modal__close-btn {
+  border: none;
+  background-color: unset;
+  position: absolute;
+  left: 90%;
+}
+// .team-modal__close-icon {
+//   fill: $black-color;
+// }
