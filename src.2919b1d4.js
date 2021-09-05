@@ -122,4 +122,4 @@ var i=require("./isObject"),t=require("./now"),r=require("./toNumber"),n="Expect
 },{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=j(require("./js/modal-lightbox")),r=j(require("./js/refs")),s=j(require("./js/apiService")),i=j(require("./templates/card-movie"));require("./js/team-modal");var a=j(require("./templates/card-movie-home.hbs")),u=j(require("./js/search")),t=j(require("./js/startpage")),q=j(require("./js/watched")),d=j(require("./js/add-watched")),c=j(require("./js/spinner"));function j(e){return e&&e.__esModule?e:{default:e}}
 },{"./sass/main.scss":"clu1","./js/modal-lightbox":"JZoU","./js/refs":"VyiV","./js/apiService":"eQwa","./templates/card-movie":"XKvp","./js/team-modal":"SVxB","./templates/card-movie-home.hbs":"rVt7","./js/search":"HU2o","./js/startpage":"ZghD","./js/watched":"BL0Q","./js/add-watched":"gn8D","./js/spinner":"Sc1o"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-group13-movie-world/src.c4b1eb6c.js.map
+//# sourceMappingURL=/project-group13-movie-world/src.2919b1d4.js.map
