@@ -70,5 +70,29 @@
   }
 }
 
-// @media screen and (min-width: 1024px) {
-// }
+// scroll-to-top styles:
+
+.to-top {
+  background: $accent-color;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: 32px;
+  color: $black-color;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all $transition-duration $transition-function;
+
+  &.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
