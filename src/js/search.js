@@ -3,6 +3,8 @@ import cardTpl from '../templates/card-movie-home.hbs';
 import { modalOpen, gallery, inputRef,successRef, noSuccessRef } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
+import { cardsMarkUp } from './startpage';
+
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
 
@@ -33,7 +35,7 @@ async function movieSearcher(searchText, pageNumber) {
      return;
     }
     clearInput();
-    createCard(results);
+    cardsMarkUp(results);
 
     if (results !== []) {
       spinner.showSpinner();
@@ -47,11 +49,11 @@ async function movieSearcher(searchText, pageNumber) {
   } catch (error) {}
 }
 
-function createCard(result) {
-  const markup = cardTpl(result);
+// function createCard(result) {
+//   const markup = cardTpl(result);
 
-  gallery.insertAdjacentHTML('beforeend', markup);
-}
+//   gallery.insertAdjacentHTML('beforeend', markup);
+// }
 
 function clearInput() {
   gallery.innerHTML = '';
