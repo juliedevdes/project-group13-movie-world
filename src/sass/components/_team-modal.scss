@@ -24,20 +24,18 @@
     fill: $secondary-font-color;
     display: inline-block;
     transition: fill 250ms linear;
-    &:hover,
-    &:focus {
+    &:hover {
       fill: $accent-color;
       cursor: pointer;
     }
   }
 
   &__soc-link {
-    &:focus {
-      fill: $accent-color;
-      cursor: pointer;
-    }
     &:not(:last-child) {
       margin-right: 10px;
+    }
+    &:focus .team-modal__icon {
+      fill: $accent-color;
     }
   }
 
