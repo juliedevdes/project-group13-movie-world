@@ -6,7 +6,9 @@ export default function onOpenModalTeam(event) {
     `<div class="modal">
      <button class="modal__close-btn">
       <svg class="modal__close-icon" width="30" height="30">
-        <use href="../src/images/sprite.svg#icon-close-modal"></use>
+
+        <use href="./images/sprite.svg#icon-close-modal"></use>
+
       </svg>
     </button>
     
