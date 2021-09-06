@@ -1,4 +1,4 @@
-import { myLibraryBtn, bntlibrary, inpuForm, homeBtn, backgroundHome, watchedBtn, queueBtn, galleryRef} from './refs';
+import { myLibraryBtn, bntlibrary, inpuForm, homeBtn, backgroundHome, watchedBtn, queueBtn} from './refs';
 
 function clickBtn(evt) {
   activeBorderOn();
@@ -8,8 +8,9 @@ function clickBtn(evt) {
 let arrQueueFilms;
 
 myLibraryBtn.addEventListener('click', clickBtn);
-// queueBtn.addEventListener('click', activeBtnQueue);
-// watchedBtn.addEventListener('click', activeBtnWatched);
+
+queueBtn.addEventListener('click', activeBtnQueue);
+watchedBtn.addEventListener('click', activeBtnWatched);
 
 function addClassMyLibrary() {
   // добавляет/убирает классы в хедере для правильной отрисовки
@@ -26,11 +27,19 @@ function activeBorderOn() {
   myLibraryBtn.classList.add('is-active');
 }
 
-// function activeBtnQueue(evt) {
-//   //добавляет/убирает классы для кнопок в MY LIBRERY
+function activeBtnQueue(evt) {
+  //добавляет/убирает классы для кнопок в MY LIBRERY
+  watchedBtn.classList.add('accent');
+  queueBtn.classList.remove('primary-white');
+  watchedBtn.classList.remove('active-btn');
+  queueBtn.classList.add('active-btn');
+}
 
-// }
+function activeBtnWatched(evt) {
+  // при нажатии на кнопку Watched делает ее активной и добавляет розметку
+  queueBtn.classList.add('primary-white');
+  watchedBtn.classList.remove('accent');
+  watchedBtn.classList.add('active-btn');
+  queueBtn.classList.remove('active-btn');
+}
 
-// function activeBtnWatched(evt) {
-//   // при нажатии на кнопку Watched делает ее активной и добавляет розметку
-// }
