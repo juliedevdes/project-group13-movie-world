@@ -1,5 +1,7 @@
 .modal {
-  @media screen and (min-width: 646px) {
+  background: $white-color;
+
+  @media screen and (max-width: 767px) {
     width: 280px;
     height: 958px;
     margin-left: 20px;
@@ -7,7 +9,7 @@
     margin-top: 48px;
   }
 
-  @media screen and (max-width: 911px) {
+  @media screen and (min-width: 768px) {
     width: 618px;
     height: 562px;
     margin-left: 30px;
@@ -15,7 +17,7 @@
     margin-top: 40px;
   }
 
-  @media screen and (min-width: 912px) {
+  @media screen and (min-width: 1024px) {
     width: 882px;
     height: 568px;
     margin-top: 50px;
