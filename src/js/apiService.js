@@ -39,19 +39,27 @@ export default {
     }
   },
   //Поиск по жанрам (для модалки выводит инфо конкретного фильма)
-  async fetchGenre() {
-    try {
+  // async fetchGenre() {
+  //   try {
       
-      const genres = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,);
+  //     const genres = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,);
        
-      return genres.data;
+  //     return genres.data;
       
    
-    } catch (error) {
-      console.error('Error with Genres' + error);
+  //   } catch (error) {
+  //     console.error('Error with Genres' + error);
       
 
-    }
+  //   }
+  // }
+   fetchGenre() {
+    return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+      .then(r => r.json())
+      .then(data => {
+        return data.genres;
+      })
+      .catch(error => console.log(error));
   }
  
 };
