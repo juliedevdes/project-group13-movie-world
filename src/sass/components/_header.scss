@@ -330,6 +330,12 @@ body {
   transform: translateX(15px);
 }
 
+.active-btn {
+  border: 1px solid #ff6b01;
+  color: white;
+  background-color: #ff6b01;
+}
+
 // you can choose the outline color of a toggle by changing the box-shadow value below:
 
 // .theme-switch__toggle:focus + .theme-switch__track,
