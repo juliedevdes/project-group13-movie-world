@@ -1,0 +1,40 @@
+.preloader {
+  position: absolute;
+  top: 178px;
+  left: 15px;
+
+  @media screen and (min-width: 768px) {
+    top: 222px;
+    left: 185px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 220px;
+    left: 560px;
+  }
+}
+
+.spinner {
+  float: left;
+  width: 10px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #ffd000;
+}
+
+.preloader .spinner {
+  animation: loading 1250ms $transition-function infinite;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(300px, 0);
+    background-color: $accent-color;
+    width: 49px;
+  }
+}

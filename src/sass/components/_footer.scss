@@ -1,0 +1,113 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.page-footer {
+  height: 65px;
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+}
+.page-footer.light-theme {
+  background-color: $footer-bg-color;
+  color: #000;
+}
+
+.page-footer.dark-theme {
+  background-color: #292929;
+  color: #fff;
+}
+
+/*====heart icon and it's animation====*/
+@keyframes beat {
+  to {
+    transform: scale(1.4);
+  }
+}
+
+.footer__heart-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  animation: beat 0.25s infinite alternate;
+  transform-origin: center;
+}
+/*====heart end=====*/
+
+.footer__btn {
+  color: $footer-text-color;
+  border: none;
+  background-color: unset;
+  text-decoration: underline;
+  transition: color 250ms linear;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    cursor: pointer;
+  }
+}
+
+.page-footer.dark-theme.footer-btn {
+  color: $white-color;
+}
+
+.footer__text {
+  color: $footer-text-color;
+  text-align: left;
+  line-height: 28px;
+  font-size: 14px;
+}
+.footer__text--down {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .page-footer {
+    height: 50px;
+  }
+  .footer__text {
+    text-align: center;
+
+    line-height: 14px;
+    font-size: 16px;
+    max-width: unset;
+  }
+  .footer__text--down {
+    display: unset;
+  }
+}
+
+.to-top {
+  background: $accent-color;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: 32px;
+  color: $black-color;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all $transition-duration $transition-function;
+
+  &.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 525px) {
+  .footer__text {
+    text-align: center;
+  }
+}

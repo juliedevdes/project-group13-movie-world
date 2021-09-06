@@ -1,0 +1,122 @@
+.team-modal {
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &__img {
+    min-height: 140px;
+    min-width: 80px;
+    display: block;
+    border-radius: 5px;
+  }
+  &__list {
+    &__item {
+      display: flex;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &--side-info {
+      margin-left: 10px;
+    }
+  }
+  &__icon {
+    fill: $secondary-font-color;
+    display: inline-block;
+    transition: fill 250ms linear;
+    &:hover {
+      fill: $accent-color;
+      cursor: pointer;
+    }
+  }
+
+  &__soc-link {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:focus .team-modal__icon {
+      fill: $accent-color;
+    }
+  }
+
+  &__role-title {
+    font-size: 15px;
+    line-height: 17px;
+    color: $secondary-font-color;
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  &__quote {
+    font-size: 13px;
+    color: $secondary-font-color;
+    margin-bottom: 10px;
+    letter-spacing: 0.018em;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 25px;
+    margin-right: 35px;
+  }
+
+  &__close-btn {
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 90%;
+    fill: $secondary-font-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team-modal {
+    &__name {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    &__quote {
+      font-size: 20px;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+    &__role-title {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    &__title {
+      font-size: 30px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .team-modal {
+    &__name {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    &__quote {
+      font-size: 13px;
+      max-width: 350px;
+      margin-bottom: 20px;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__list__item {
+      min-width: 500px;
+      &:nth-child(7) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
