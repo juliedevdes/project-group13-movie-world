@@ -21,4 +21,27 @@ const backgroundHome = document.querySelector('.page-header');
 const galleryRef = document.querySelector('.gallery__list');
 const addWatchedBtn = document.getElementById('add-watched-btn');
 
-export { modalOpen, gallery, inputRef, toggleRef, footerRef, noSuccessRef, successRef, toTop, myLibraryBtn, bntlibrary, inpuForm, homeBtn, backgroundHome, watchedBtn, queueBtn, galleryRef, addWatchedBtn, logoLink, modalFilmOpen, modalTeamOpen, btnWatched, btnQueue};
+export {
+  modalOpen,
+  gallery,
+  inputRef,
+  toggleRef,
+  footerRef,
+  noSuccessRef,
+  successRef,
+  toTop,
+  myLibraryBtn,
+  bntlibrary,
+  inpuForm,
+  homeBtn,
+  backgroundHome,
+  watchedBtn,
+  queueBtn,
+  galleryRef,
+  addWatchedBtn,
+  logoLink,
+  modalFilmOpen,
+  modalTeamOpen,
+  btnWatched,
+  btnQueue,
+};

@@ -3,7 +3,8 @@ import 'animate.css';
 
 import onOpenModalFilm from './js/modal-film-lightbox';
 import onOpenModalTeam from './js/modal-team-lightbox';
-import refs from './js/refs';
+// import refs from './js/refs';
+import { modalFilmOpen, modalTeamOpen } from './js/refs';
 import api from './js/apiService';
 import modalMovieTpl from './templates/card-movie';
 import teamModal from './js/team-modal';
@@ -18,5 +19,6 @@ import './js/render-watched-btn';
 import toTop from './js/to-top';
 import lib from './js/my-library';
 import isWatched from './js/is-watched';
-refs.modalFilmOpen.addEventListener('click', onOpenModalFilm);
-refs.modalTeamOpen.addEventListener('click', onOpenModalTeam);
+
+// modalFilmOpen.addEventListener('click', onOpenModalFilm);
+modalTeamOpen.addEventListener('click', onOpenModalTeam);
