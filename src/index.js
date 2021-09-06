@@ -20,5 +20,5 @@ import toTop from './js/to-top';
 import lib from './js/my-library';
 import isWatched from './js/is-watched';
 
-// modalFilmOpen.addEventListener('click', onOpenModalFilm);
+modalFilmOpen.addEventListener('click', onOpenModalFilm);
 modalTeamOpen.addEventListener('click', onOpenModalTeam);
