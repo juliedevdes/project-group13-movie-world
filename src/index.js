@@ -1,7 +1,8 @@
 import './sass/main.scss';
 import 'animate.css';
 
-import onOpenModal from './js/modal-lightbox';
+import onOpenModalFilm from './js/modal-film-lightbox';
+import onOpenModalTeam from './js/modal-team-lightbox';
 import refs from './js/refs';
 import api from './js/apiService';
 import modalMovieTpl from './templates/card-movie';
@@ -17,3 +18,5 @@ import './js/render-watched-btn';
 import toTop from './js/to-top';
 import lib from './js/my-library';
 import isWatched from './js/is-watched';
+refs.modalFilmOpen.addEventListener('click', onOpenModalFilm);
+refs.modalTeamOpen.addEventListener('click', onOpenModalTeam);
