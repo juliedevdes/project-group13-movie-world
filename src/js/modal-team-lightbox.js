@@ -1,6 +1,9 @@
 import * as basicLightbox from 'basiclightbox';
+import { modalTeamOpen } from './refs';
 
-export default function onOpenModalTeam(event) {
+modalTeamOpen.addEventListener('click', onOpenModalTeam);
+
+function onOpenModalTeam(event) {
   // console.log(event);
   const instance = basicLightbox.create(
     `<div class="modal">

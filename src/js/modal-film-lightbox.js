@@ -1,9 +1,10 @@
 import * as basicLightbox from 'basiclightbox';
-// import refs from './refs';
-// import data from '../data.json';
 import modalMovieTpl from '../templates/card-movie';
+import { modalFilmOpen } from './refs';
 
-export default function onOpenModalFilm(event) {
+modalFilmOpen.addEventListener('click', onOpenModalFilm);
+
+function onOpenModalFilm(event) {
   console.log(event);
 
   const instance = basicLightbox.create(document.querySelector('template'), {
