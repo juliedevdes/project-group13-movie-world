@@ -6,4 +6,15 @@ const footerRef = document.querySelector('.page-footer');
 const noSuccessRef = document.querySelector('.no-success');
 const successRef = document.querySelector('.success');
 const toTop = document.querySelector('.to-top');
-export { modalOpen, gallery, inputRef, toggleRef, footerRef, noSuccessRef, successRef, toTop };
+const addWatchedBtn = document.getElementById('add-watched-btn');
+export {
+  modalOpen,
+  gallery,
+  inputRef,
+  toggleRef,
+  footerRef,
+  noSuccessRef,
+  successRef,
+  toTop,
+  addWatchedBtn,
+};
