@@ -14,3 +14,4 @@ import addWatched from './js/add-watched';
 import theme from './js/theme';
 import spinner from './js/spinner';
 import toTop from './js/to-top';
+import lib from './js/my-library';
