@@ -15,4 +15,5 @@ import theme from './js/theme';
 import spinner from './js/spinner';
 import './js/render-watched-btn';
 import toTop from './js/to-top';
+import lib from './js/my-library';
 import isWatched from './js/is-watched';
