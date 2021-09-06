@@ -18,6 +18,17 @@
 .page-footer.dark-theme {
   background-color: #292929;
   color: #fff;
+  & .footer__text {
+    color: #baaeae;
+  }
+  & .footer__btn {
+    color: $footer-bg-color;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      cursor: pointer;
+    }
+  }
 }
 
 /*====heart icon and it's animation====*/
