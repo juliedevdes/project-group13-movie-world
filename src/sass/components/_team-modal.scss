@@ -32,6 +32,10 @@
   }
 
   &__soc-link {
+    &:focus {
+      fill: $accent-color;
+      cursor: pointer;
+    }
     &:not(:last-child) {
       margin-right: 10px;
     }
