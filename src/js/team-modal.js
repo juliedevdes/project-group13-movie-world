@@ -19,7 +19,7 @@ const instance = basicLightbox.create(
 
 const teamBtn = document.querySelector('.footer__btn');
 
-teamBtn.addEventListener('click', onTeamClick);
+//teamBtn.addEventListener('click', onTeamClick);
 
 function onTeamClick(e) {
   instance.show();
