@@ -2,15 +2,14 @@ import * as basicLightbox from 'basiclightbox';
 import modalMovieTpl from '../templates/card-movie';
 import { modalFilmOpen } from './refs';
 import api from './apiService';
+import { cardsMarkUp }  from './startpage'
 
 modalFilmOpen.addEventListener('click', onOpenModalFilm);
 
 function onOpenModalFilm(event) {
-  console.log(event.target.dataset.id);
+  
   event.preventDefault();
-
-  api
-    .MovieSearchId(event.target.dataset.id)
+  api.MovieSearchId(event.target.dataset.id)
     .then(data => {
       if (event.target.nodeName !== 'IMG') return;
 
@@ -20,12 +19,15 @@ function onOpenModalFilm(event) {
         },
       });
       instance.show();
-
+      const genres = data.genres.map(item => item.name);
+      
+      data.genres = genres.join(', ');
+      data.popularity = parseFloat(data.popularity).toFixed(1);
+   
       const modalContainer = document.querySelector('.modal');
-
+     
       const menuMarkup = modalMovieTpl(data);
-
-      modalContainer.insertAdjacentHTML('afterbegin', menuMarkup);
+      modalContainer.insertAdjacentHTML('afterbegin', menuMarkup );
 
       window.addEventListener('keydown', closeModalHand);
 
@@ -42,3 +44,4 @@ function onOpenModalFilm(event) {
 
   // refs.modalFilmOpen.removeEventListener('click', onOpenModalFilm);
 }
+

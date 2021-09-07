@@ -34,11 +34,12 @@ export default {
       const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
       const result = { ...data };
       return result;
+      
     } catch (error) {
       console.error('Error with Api ID' + error);
     }
   },
-  //Поиск по жанрам (для модалки выводит инфо конкретного фильма)
+  // //Поиск по жанрам (для модалки выводит инфо конкретного фильма)
   // async fetchGenre() {
   //   try {
 

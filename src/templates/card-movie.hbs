@@ -1,6 +1,6 @@
 {{!-- {{#each this}} --}}
 <div class='card-movie'>
-  <img class='card-movie__img' src='{{backdrop_path}}' alt='{{original_title}}' />
+  <img class='card-movie__img' src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='{{original_title}}' />
   <div class='card-movie__section'>
     <h1 class='card-movie__title'>{{original_title}}</h1>
     <div>
@@ -12,7 +12,7 @@
       </ul>
       <ul class='movie__info'>
         <li class='movie__info--item'>{{vote_average}} / {{vote_count}}</li>
-        <li class='movie__info--item'>{{popularity}}</li>>
+        <li class='movie__info--item'>{{popularity}}</li>
         <li class='movie__info--item'>{{original_title}}</li>
         <li class='movie__info--item'>{{genres}}</li>
       </ul>
