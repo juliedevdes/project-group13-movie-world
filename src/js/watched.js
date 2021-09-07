@@ -1,6 +1,3 @@
-// по нажатию на кнопку в карточкt фильма - взять данные фильма (постер, название, жанры, год) и добавить в массив в локал сторейдж
-//массив сохранять в таком же формате как он обрабатывается для отрисовки популярых фильмов
-// при переходе в библиотеку в watched - рендерить этот массив с помощью скрипта !!!аналогичного startpage.js!!!
 // ДОПЗАДАНЕ - вывод фильмов с пагинацией (на случай большого кол-ва фильмов в библиотеке)
 
 import { gallery, watchedBtn } from './refs';
@@ -62,6 +59,11 @@ let currentMovie = {
 // === /\/\/\/\ тестовые даные о фильме пока нет модалики. Будем получать из event при открытии карточки фильма /\/\/\/\ ===
 
 const watchedBtn_test = document.querySelector('.watched-btn');
+
+import { watchedBtn } from './refs';
+import renderGallery from './render-gallery';
+import getWatched from './get-watched';
+
 renderWatched();
 
 function renderWatched() {

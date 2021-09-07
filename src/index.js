@@ -1,7 +1,7 @@
 import './sass/main.scss';
 import 'animate.css';
-
-import onOpenModal from './js/modal-lightbox';
+import modalFilmLightBox from './js/modal-film-lightbox';
+import modalTeamLightBox from './js/modal-team-lightbox';
 import refs from './js/refs';
 import api from './js/apiService';
 import modalMovieTpl from './templates/card-movie';
