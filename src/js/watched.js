@@ -3,7 +3,7 @@
 // при переходе в библиотеку в watched - рендерить этот массив с помощью скрипта !!!аналогичного startpage.js!!!
 // ДОПЗАДАНЕ - вывод фильмов с пагинацией (на случай большого кол-ва фильмов в библиотеке)
 
-import { gallery } from './refs';
+import { gallery, watchedBtn } from './refs';
 import renderGallery from './render-gallery';
 import getWatched from './get-watched';
 
@@ -61,10 +61,11 @@ let currentMovie = {
 };
 // === /\/\/\/\ тестовые даные о фильме пока нет модалики. Будем получать из event при открытии карточки фильма /\/\/\/\ ===
 
-const watchedBtn = document.querySelector('.watched-btn');
+const watchedBtn_test = document.querySelector('.watched-btn');
 renderWatched();
 
 function renderWatched() {
+  watchedBtn_test.addEventListener('click', onWatchedClick);
   watchedBtn.addEventListener('click', onWatchedClick);
 
   function onWatchedClick() {
