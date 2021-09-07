@@ -1,12 +1,14 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef,successRef, noSuccessRef } from './refs';
+import { modalOpen, gallery, inputRef,successRef, noSuccessRef, homeBtn, logoLink } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './startpage';
 
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
+homeBtn.addEventListener('click', clearSearch);
+logoLink.addEventListener('click', clearSearch);
 
 const spinner = new Spinner();
 
@@ -20,6 +22,10 @@ function searchMovie(e) {
     return;
   }
   movieSearcher(inputText, page);
+}
+
+function clearSearch() {
+  inputRef.value = '';
 }
 
 async function movieSearcher(searchText, pageNumber) {

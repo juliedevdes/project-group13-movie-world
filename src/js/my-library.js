@@ -3,6 +3,7 @@ import { myLibraryBtn, bntlibrary, inpuForm, homeBtn, backgroundHome, watchedBtn
 function clickBtn() {
   activeBorderOn();
   addClassMyLibrary();
+  activeBtnQueue();
 }
 
 function clickBtnHome() {

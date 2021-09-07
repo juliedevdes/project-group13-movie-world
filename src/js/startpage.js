@@ -1,9 +1,11 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef } from './refs';
+import { modalOpen, gallery, inputRef, homeBtn, logoLink } from './refs';
 import Spinner from './spinner';
 
 document.addEventListener('DOMContentLoaded', startPage);
+homeBtn.addEventListener('click', startPage);
+logoLink.addEventListener('click', startPage);
 
 const spinner = new Spinner();
 
