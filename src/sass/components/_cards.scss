@@ -1,0 +1,23 @@
+.movie-name {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.dark-theme .movie-name {
+  color: #f7f7f7;
+}
+
+.movie-info {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 10px;
+  color: #ff6b01;
+}
