@@ -13,4 +13,13 @@ function onOpenModalTeam(event) {
   });
 
   instance.show();
+
+  window.addEventListener('keydown', closeModalHand);
+
+  function closeModalHand(event) {
+    if (event.code === 'Escape') {
+      instance.close();
+      window.removeEventListener('keydown', closeModalHand);
+    }
+  }
 }

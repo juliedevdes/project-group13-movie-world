@@ -32,7 +32,7 @@ export default {
   async MovieSearchId(id) {
     try {
       const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
-      const result = { ...data, year: createYear(data), genres: createGenresFromID(data) };
+      const result = { ...data };
       return result;
     } catch (error) {
       console.error('Error with Api ID' + error);
@@ -41,26 +41,22 @@ export default {
   //Поиск по жанрам (для модалки выводит инфо конкретного фильма)
   // async fetchGenre() {
   //   try {
-      
+
   //     const genres = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,);
-       
+
   //     return genres.data;
-      
-   
+
   //   } catch (error) {
   //     console.error('Error with Genres' + error);
-      
 
   //   }
   // }
-   fetchGenre() {
+  fetchGenre() {
     return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
       .then(r => r.json())
       .then(data => {
         return data.genres;
       })
       .catch(error => console.log(error));
-  }
- 
+  },
 };
- 
