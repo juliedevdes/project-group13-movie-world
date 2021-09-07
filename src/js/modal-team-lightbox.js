@@ -1,7 +1,10 @@
 import * as basicLightbox from 'basiclightbox';
 import teamModalTemp from '../templates/team-modal.hbs';
+import { modalTeamOpen } from './refs';
 
-export default function onOpenModalTeam(event) {
+modalTeamOpen.addEventListener('click', onOpenModalTeam);
+
+function onOpenModalTeam(event) {
   // console.log(event);
   const instance = basicLightbox.create(`${teamModalTemp({})}`, {
     onShow: instance => {
