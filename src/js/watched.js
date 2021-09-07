@@ -60,10 +60,6 @@ let currentMovie = {
 
 const watchedBtn_test = document.querySelector('.watched-btn');
 
-import { watchedBtn } from './refs';
-import renderGallery from './render-gallery';
-import getWatched from './get-watched';
-
 renderWatched();
 
 function renderWatched() {
