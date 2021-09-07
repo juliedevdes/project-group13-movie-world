@@ -24,8 +24,7 @@
     fill: $secondary-font-color;
     display: inline-block;
     transition: fill 250ms linear;
-    &:hover,
-    &:focus {
+    &:hover {
       fill: $accent-color;
       cursor: pointer;
     }
@@ -34,6 +33,9 @@
   &__soc-link {
     &:not(:last-child) {
       margin-right: 10px;
+    }
+    &:focus .team-modal__icon {
+      fill: $accent-color;
     }
   }
 
@@ -69,11 +71,9 @@
     background-color: unset;
     position: absolute;
     left: 90%;
+    fill: $secondary-font-color;
   }
 }
-// .team-modal__close-icon {
-//   fill: $black-color; ???? пачему неть????????  ໒( ●ܫฺ ●)ʋ
-// }
 
 @media screen and (min-width: 768px) {
   .team-modal {
