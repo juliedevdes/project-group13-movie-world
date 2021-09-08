@@ -1,4 +1,13 @@
-import { myLibraryBtn, bntlibrary, inpuForm, homeBtn, backgroundHome, watchedBtn, queueBtn, logoLink} from './refs';
+import {
+  myLibraryBtn,
+  bntlibrary,
+  inpuForm,
+  homeBtn,
+  backgroundHome,
+  watchedBtn,
+  queueBtn,
+  logoLink,
+} from './refs';
 
 function clickBtn() {
   activeBorderOn();
@@ -52,7 +61,6 @@ function activeBtnWatched() {
   watchedBtn.classList.add('active-btn');
   queueBtn.classList.remove('active-btn');
 }
-
 
 function addClassHome() {
   // добавляет/убирает классы в хедере для правильной отрисовки
