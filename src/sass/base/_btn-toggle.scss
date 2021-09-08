@@ -1,7 +1,7 @@
-.add-watched-btn.watched:before {
+.btn-watch.watched:before {
   content: 'REMOVE FROM WATCHED';
 }
 
-.add-watched-btn:not(.watched):after {
+.btn-watch:not(.watched):after {
   content: 'ADD WATCHED';
 }
