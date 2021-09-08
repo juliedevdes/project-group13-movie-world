@@ -81,13 +81,13 @@ const markup = `<div class='team-modal'>
         “A minute ago this was the safest job in the world. Now it's turning into a bad day in
         Bosnia.”
       </p>
-      <a href='https://www.linkedin.com/in/ponomalex/' class='team-modal__soc-link link'><svg
+      <a href='https://www.linkedin.com/in/ponomalex/' target='_blank' class='team-modal__soc-link link'><svg
           class='team-modal__icon'
           width='35'
           height='35'
         >
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/Ponomaleks' class='team-modal__soc-link link'>
+      <a href='https://github.com/Ponomaleks' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -105,13 +105,13 @@ const markup = `<div class='team-modal'>
       <p class='team-modal__role-title'>team lead</p>
       <h2 class='team-modal__name'>Valerii Vitenko</h2>
       <p class='team-modal__quote'>“Guns for show, knives for a pro.”</p>
-      <a href='https://www.linkedin.com/in/leroviten/' class='team-modal__soc-link link'><svg
+      <a href='https://www.linkedin.com/in/leroviten/' target='_blank' class='team-modal__soc-link link'><svg
           class='team-modal__icon'
           width='35'
           height='35'
         >
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/LeroViten' class='team-modal__soc-link link'>
+      <a href='https://github.com/LeroViten' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -132,11 +132,11 @@ const markup = `<div class='team-modal'>
         “All right, son: roll them guns up, count the money, and put your seat belt on.”
       </p>
       <a
-        href='https://www.linkedin.com/in/anna-savchuk-b1759221b/'
+        href='https://www.linkedin.com/in/anna-savchuk-b1759221b/' target='_blank'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/nensi-n' class='team-modal__soc-link link'>
+      <a href='https://github.com/nensi-n' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -154,13 +154,13 @@ const markup = `<div class='team-modal'>
       <p class='team-modal__role-title'>developer</p>
       <h2 class='team-modal__name'>Anna Pavlova</h2>
       <p class='team-modal__quote'>“It’s been emotional”</p>
-      <a href='https://www.linkedin.com/in/anna-pavlova-80b88321b/' class='team-modal__soc-link link'><svg
+      <a href='https://www.linkedin.com/in/anna-pavlova-80b88321b/' target='_blank' class='team-modal__soc-link link'><svg
           class='team-modal__icon'
           width='35'
           height='35'
         >
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/HPavlova' class='team-modal__soc-link link'>
+      <a href='https://github.com/HPavlova' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -184,10 +184,10 @@ const markup = `<div class='team-modal'>
       <p class='team-modal__quote'>“You're not funny, Valera.”</p>
       <a
         href='https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BD%D0%B5%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE-0ab499215/'
-        class='team-modal__soc-link link'
+        target='_blank' class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/serjneo' class='team-modal__soc-link link'>
+      <a href='https://github.com/serjneo' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -206,11 +206,11 @@ const markup = `<div class='team-modal'>
       <h2 class='team-modal__name'>Alexander Baran</h2>
       <p class='team-modal__quote'>“If you hold back anything, I'll kill ya.”</p>
       <a
-        href='https://www.linkedin.com/in/alexander-baran-415091212/'
+        href='https://www.linkedin.com/in/alexander-baran-415091212/' target='_blank'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/lidanko12' class='team-modal__soc-link link'>
+      <a href='https://github.com/lidanko12' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -229,11 +229,11 @@ const markup = `<div class='team-modal'>
       <h2 class='team-modal__name'>Roman Leshenko</h2>
       <p class='team-modal__quote'>“You're lucky you're still breathing”</p>
       <a
-        href='https://www.linkedin.com/in/roman-leshchenko-467149220/'
+        href='https://www.linkedin.com/in/roman-leshchenko-467149220/' target='_blank'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/xetyri' class='team-modal__soc-link link'>
+      <a href='https://github.com/xetyri' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
@@ -258,11 +258,11 @@ const markup = `<div class='team-modal'>
         “If the milk turns out to be sour, I ain't the kinda pussy to drink it.”
       </p>
       <a
-        href='https://www.linkedin.com/in/julia-ohrimenko-97281515b/'
+        href='https://www.linkedin.com/in/julia-ohrimenko-97281515b/' target='_blank'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
-      <a href='https://github.com/juliedevdes' class='team-modal__soc-link link'>
+      <a href='https://github.com/juliedevdes' target='_blank' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>

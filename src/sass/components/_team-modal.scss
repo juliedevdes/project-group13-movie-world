@@ -84,6 +84,12 @@
     top: 5%;
     left: 90%;
     fill: $secondary-font-color;
+    transition: fill 250ms linear;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      fill: $accent-color;
+    }
   }
 }
 
