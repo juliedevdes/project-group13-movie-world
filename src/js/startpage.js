@@ -9,11 +9,11 @@ logoLink.addEventListener('click', startPage);
 
 const spinner = new Spinner();
 
-let currentPage = 1;
+let currentPage = 1 ;
 
 async function startPage() {
   try {
-    const data = await api.PopularMovie(currentPage);
+     const data = await api.PopularMovie(currentPage);
 
     const cards = data.results;
     spinner.showSpinner();
@@ -21,9 +21,10 @@ async function startPage() {
       spinner.hideSpinner();
     }
     clearInput();
-    cardsMarkUp(cards);
-    observer.observe(loadMoreRef);
-    api.fetchGenre();
+   
+   observer.observe(loadMoreRef)
+  
+   
   } catch (error) {}
 }
 export function cardsMarkUp(cards) {
@@ -61,21 +62,26 @@ const currentMovies = {
 };
 
 // intersectionObserver for infinite scroll:
-const onEntry = entries => {
+export  function  onEntry( entries )  {
   entries.forEach(entry => {
+ 
     if (entry.isIntersecting) {
-      api.PopularMovie(currentPage).then(movies => {
-        if (movies.length < 1) {
+     
+        api.PopularMovie(currentPage).then(cards => {
+        if (cards.length < 1) {
           window.alert('No images to display 😢');
           observer.unobserve(loadMoreRef);
           return;
         }
-
-        currentPage++;
-        const moviesToRender = movies.results;
-        gallery.insertAdjacentHTML('beforeend', cardTpl(moviesToRender));
+    
+        if(cards.page >= 1 ) 
+          cards.page = currentPage++;
+       
+        const moviesToRender = cards.results;
+        // gallery.insertAdjacentHTML('beforeend', cardTpl(moviesToRender));
+        cardsMarkUp(moviesToRender)
       });
-    }
+     }
   });
 };
 

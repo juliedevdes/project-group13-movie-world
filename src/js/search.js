@@ -4,6 +4,8 @@ import { modalOpen, gallery, inputRef,successRef, noSuccessRef, homeBtn, logoLin
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './startpage';
+import { onEntry } from './startpage';
+
 
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
@@ -41,7 +43,9 @@ async function movieSearcher(searchText, pageNumber) {
      return;
     }
     clearInput();
+
     cardsMarkUp(results);
+ 
 
     if (results !== []) {
       spinner.showSpinner();
@@ -76,3 +80,5 @@ function noResults() {
   }, 1500);
   clearInput();
 }
+
+
