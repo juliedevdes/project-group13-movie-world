@@ -1,5 +1,4 @@
 import * as basicLightbox from 'basiclightbox';
-import teamModalTemp from '../templates/team-modal.hbs';
 import { modalTeamOpen } from './refs';
 
 import svgUrl from '../images/sprite.svg';
@@ -15,6 +14,26 @@ import valeraDesk from '../images/team/team-adaptive/desktop/valerii-vitenko.jpg
 import annaSMob from '../images/team/team-adaptive/mobile/anna-savchuck.jpg';
 import annaSTab from '../images/team/team-adaptive/tablet/anna-savchuk.jpg';
 import annaSDesk from '../images/team/team-adaptive/desktop/anna-savchuk.jpg';
+
+import annaPMob from '../images/team/team-adaptive/mobile/anna-pavlova.jpg';
+import annaPTab from '../images/team/team-adaptive/tablet/anna-pavlova.jpg';
+import annaPDesk from '../images/team/team-adaptive/desktop/anna-pavlova.jpg';
+
+import serMob from '../images/team/team-adaptive/mobile/serhii-nechytailenko.jpg';
+import serTab from '../images/team/team-adaptive/tablet/serhii-nechytailenko.jpg';
+import serDesk from '../images/team/team-adaptive/desktop/serhii-nechytailenko.jpg';
+
+import alexBMob from '../images/team/team-adaptive/mobile/alexander-baran.jpg';
+import alexBTab from '../images/team/team-adaptive/tablet/alexander-baran.jpg';
+import alexBDesk from '../images/team/team-adaptive/desktop/alexander-baran.jpg';
+
+import romaMob from '../images/team/team-adaptive/mobile/roma-leshenko.jpg';
+import romaTab from '../images/team/team-adaptive/tablet/roma-leshenko.jpg';
+import romaDesk from '../images/team/team-adaptive/desktop/roma-leshenko.jpg';
+
+import juliaMob from '../images/team/team-adaptive/mobile/julia-okhrimenko.jpg';
+import juliaTab from '../images/team/team-adaptive/tablet/julia-ohrimenko.jpg';
+import juliaDesk from '../images/team/team-adaptive/desktop/julia-ohrimenko.jpg';
 
 modalTeamOpen.addEventListener('click', onOpenModalTeam);
 
@@ -91,19 +110,19 @@ const markup = `<div class='team-modal'>
           width='35'
           height='35'
         >
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/LeroViten' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
 
   <li class='team-modal__list__item'>
     <picture>
-      <source srcset='../anna-savchuk.3c3b6997.jpg' media='(min-width:1024px)' />
-      <source srcset='../anna-savchuk.62854a93.jpg' media='(min-width:768px)' />
-      <source srcset='../anna-savchuck.d66459cf.jpg' media='(min-width:320px)' />
-      <img src='../anna-savchuck.d66459cf.jpg' alt='anna-savchuck' class='team-modal__img' />
+      <source srcset='${annaSDesk}' media='(min-width:1024px)' />
+      <source srcset='${annaSTab}' media='(min-width:768px)' />
+      <source srcset='${annaSMob}' media='(min-width:320px)' />
+      <img src='${annaSMob}' alt='anna-savchuck' class='team-modal__img' />
     </picture>
 
     <div class='team-modal__list--side-info'>
@@ -116,44 +135,44 @@ const markup = `<div class='team-modal'>
         href='https://www.linkedin.com/in/anna-savchuk-b1759221b/'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/nensi-n' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
 
   <li class='team-modal__list__item'>
     <picture>
-      <source srcset='../anna-pavlova.8ac95507.jpg' media='(min-width:1024px)' />
-      <source srcset='../anna-pavlova.92f94894.jpg' media='(min-width:768px)' />
-      <source srcset='../anna-pavlova.7b839c49.jpg' media='(min-width:320px)' />
-      <img src='../anna-pavlova.7b839c49.jpg' alt='anna-pavlova' class='team-modal__img' />
+      <source srcset='${annaPDesk}' media='(min-width:1024px)' />
+      <source srcset='${annaPTab}' media='(min-width:768px)' />
+      <source srcset='${annaPMob}' media='(min-width:320px)' />
+      <img src='${annaPMob}' alt='anna-pavlova' class='team-modal__img' />
     </picture>
 
     <div class='team-modal__list--side-info'>
       <p class='team-modal__role-title'>developer</p>
       <h2 class='team-modal__name'>Anna Pavlova</h2>
       <p class='team-modal__quote'>“It’s been emotional”</p>
-      <a href='/' class='team-modal__soc-link link'><svg
+      <a href='https://www.linkedin.com/in/anna-pavlova-80b88321b/' class='team-modal__soc-link link'><svg
           class='team-modal__icon'
           width='35'
           height='35'
         >
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/HPavlova' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
 
   <li class='team-modal__list__item'>
     <picture>
-      <source srcset='../serhii-nechytailenko.c5e74244.jpg' media='(min-width:1024px)' />
-      <source srcset='../serhii-nechytailenko.b4ec8490.jpg' media='(min-width:768px)' />
-      <source srcset='../serhii-nechytailenko.b34b507d.jpg' media='(min-width:320px)' />
+      <source srcset='${serDesk}' media='(min-width:1024px)' />
+      <source srcset='${serTab}' media='(min-width:768px)' />
+      <source srcset='${serMob}' media='(min-width:320px)' />
       <img
-        src='../serhii-nechytailenko.b34b507d.jpg'
+        src='${serMob}'
         alt='serhii-nechytailenko'
         class='team-modal__img'
       />
@@ -167,19 +186,19 @@ const markup = `<div class='team-modal'>
         href='https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BD%D0%B5%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE-0ab499215/'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/serjneo' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
 
   <li class='team-modal__list__item'>
     <picture>
-      <source srcset='../alexander-baran.5bcb5cb7.jpg' media='(min-width:1024px)' />
-      <source srcset='../alexander-baran.b413d89b.jpg' media='(min-width:768px)' />
-      <source srcset='../alexander-baran.f9c5f7c0.jpg' media='(min-width:320px)' />
-      <img src='../alexander-baran.f9c5f7c0.jpg' alt='alexander-baran' class='team-modal__img' />
+      <source srcset='${alexBDesk}' media='(min-width:1024px)' />
+      <source srcset='${alexBTab}' media='(min-width:768px)' />
+      <source srcset='${alexBMob}' media='(min-width:320px)' />
+      <img src='${alexBMob}' alt='alexander-baran' class='team-modal__img' />
     </picture>
 
     <div class='team-modal__list--side-info'>
@@ -190,19 +209,19 @@ const markup = `<div class='team-modal'>
         href='https://www.linkedin.com/in/alexander-baran-415091212/'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/lidanko12' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
 
   <li class='team-modal__list__item'>
     <picture>
-      <source srcset='../roma-leshenko.b3c54a52.jpg' media='(min-width:1024px)' />
-      <source srcset='../roma-leshenko.94190757.jpg' media='(min-width:768px)' />
-      <source srcset='../roma-leshenko.29572575.jpg' media='(min-width:320px)' />
-      <img src='../roma-leshenko.29572575.jpg' alt='roma-leshenko' class='team-modal__img' />
+      <source srcset='${romaDesk}' media='(min-width:1024px)' />
+      <source srcset='${romaTab}' media='(min-width:768px)' />
+      <source srcset='${romaMob}' media='(min-width:320px)' />
+      <img src='${romaMob}' alt='roma-leshenko' class='team-modal__img' />
     </picture>
 
     <div class='team-modal__list--side-info'>
@@ -213,20 +232,20 @@ const markup = `<div class='team-modal'>
         href='https://www.linkedin.com/in/roman-leshchenko-467149220/'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/xetyri' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
 
   <li class='team-modal__list__item'>
     <picture class='team-modal__img'>
-      <source srcset='../julia-ohrimenko.745c4808.jpg' media='(min-width:1024px)' />
-      <source srcset='../julia-ohrimenko.536d1ea8.jpg' media='(min-width:768px)' />
-      <source srcset='../julia-okhrimenko.2ca15e00.jpg' media='(min-width:320px)' />
+      <source srcset='${juliaDesk}' media='(min-width:1024px)' />
+      <source srcset='${juliaTab}' media='(min-width:768px)' />
+      <source srcset='${juliaMob}' media='(min-width:320px)' />
       <img
-        src='../julia-okhrimenko.2ca15e00.jpg'
+        src='${juliaMob}'
         alt='julia-okhrimenko'
         class='team-modal__img'
       />
@@ -242,12 +261,11 @@ const markup = `<div class='team-modal'>
         href='https://www.linkedin.com/in/julia-ohrimenko-97281515b/'
         class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-linkedin'></use></svg></a>
+          <use href='${svgUrl}#icon-linkedin'></use></svg></a>
       <a href='https://github.com/juliedevdes' class='team-modal__soc-link link'>
         <svg class='team-modal__icon' width='35' height='35'>
-          <use href='../sprite.5ec50489.svg#icon-github'></use></svg></a>
+          <use href='${svgUrl}#icon-github'></use></svg></a>
     </div>
   </li>
-
 </ul>
 </div>`;
