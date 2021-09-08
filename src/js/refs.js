@@ -20,6 +20,7 @@ const queueBtn = document.querySelector('.libr-queue');
 const backgroundHome = document.querySelector('.page-header');
 const galleryRef = document.querySelector('.gallery__list');
 // const addWatchedBtn = document.getElementById('add-watched-btn');
+const loadMoreRef = document.querySelector('.load-more');
 
 export {
   modalOpen,
@@ -44,4 +45,5 @@ export {
   modalTeamOpen,
   // btnWatched,
   btnQueue,
+  loadMoreRef,
 };
