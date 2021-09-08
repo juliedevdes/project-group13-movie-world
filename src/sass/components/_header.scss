@@ -129,6 +129,7 @@
     caret-color: #ffffff;
     color: #ffffff;
     outline: none;
+    transition: all $transition-duration $transition-function;
 
     @media screen and (min-width: 768px) {
       width: 336px;
@@ -139,6 +140,11 @@
       font-size: 14px;
       line-height: 1.14;
       caret-color: #ffffff;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $accent-color;
     }
   }
 
