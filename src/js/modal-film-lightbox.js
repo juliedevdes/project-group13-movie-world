@@ -76,6 +76,7 @@ function onOpenModalFilm(event) {
           watchedMovies.splice(index, 1);
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           addWatchedBtn.classList.toggle('watched');
+
           return;
         }
         watchedMovies.push(data);
