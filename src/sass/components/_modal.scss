@@ -1,6 +1,7 @@
 .modal {
   background: $white-color;
   position: relative;
+  border-radius: 5px;
 
   @media screen and (max-width: 767px) {
     width: 280px;
@@ -29,9 +30,12 @@
   position: absolute;
   top: 0;
   right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
   border-style: none;
   background-color: $white-color;
   font-family: $main-font;
@@ -45,6 +49,12 @@
 
 .modal__close-icon {
   fill: $black-color;
+  transition: fill $transition-duration $transition-function;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
 }
 
 .basicLightbox--visible {

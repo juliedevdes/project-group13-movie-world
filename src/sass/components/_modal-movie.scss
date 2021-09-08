@@ -5,6 +5,11 @@
   color: $black-color;
   width: fit-content;
   height: fit-content;
+  padding: 50px 30px;
+}
+
+.card-movie__img {
+  border-radius: 5px;
 }
 
 .card-movie__title {
