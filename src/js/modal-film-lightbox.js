@@ -16,7 +16,11 @@ function onOpenModalFilm(event) {
 
       const instance = basicLightbox.create(document.querySelector('template'), {
         onShow: instance => {
+          document.body.style.overflow = 'hidden';
           instance.element().querySelector('svg').onclick = instance.close;
+        },
+        onClose: instance => {
+          document.body.style.overflow = 'visible';
         },
       });
       instance.show();
