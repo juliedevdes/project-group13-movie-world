@@ -1,6 +1,10 @@
 {{!-- {{#each this}} --}}
 <div class='card-movie'>
-  <img class='card-movie__img' src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='{{original_title}}' />
+  <img
+    class='card-movie__img'
+    src='https://image.tmdb.org/t/p/w300{{poster_path}}'
+    alt='{{original_title}}'
+  />
   <div class='card-movie__section'>
     <h1 class='card-movie__title'>{{original_title}}</h1>
     <div>
@@ -20,7 +24,7 @@
     <h2 class='card-movie__about'>About</h2>
     <p class='card-movie__overview'>{{overview}}</p>
     <div>
-      <button type="button" class='card-movie-btn btn-watch button' data-id='{{id}}'>add to Watched</button>
+      <button type='button' class='card-movie-btn btn-watch button' data-id='{{id}}'>add to Watched</button>
       <button class='card-movie-btn btn-queue button'>add to queue</button>
     </div>
   </div>
