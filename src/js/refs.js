@@ -1,6 +1,6 @@
 const modalFilmOpen = document.querySelector('.modal-film-open');
 const modalTeamOpen = document.querySelector('.modal-team-open');
-const btnWatched = document.querySelector('.btn-watch');
+// const addWatchedBtn = document.querySelector('.btn-watch');
 const btnQueue = document.querySelector('.btn-queue');
 const modalOpen = document.querySelector('.modal-open');
 const gallery = document.querySelector('.gallery__list');
@@ -19,7 +19,7 @@ const watchedBtn = document.querySelector('.libr-watched');
 const queueBtn = document.querySelector('.libr-queue');
 const backgroundHome = document.querySelector('.page-header');
 const galleryRef = document.querySelector('.gallery__list');
-const addWatchedBtn = document.getElementById('add-watched-btn');
+// const addWatchedBtn = document.getElementById('add-watched-btn');
 
 export {
   modalOpen,
@@ -38,10 +38,10 @@ export {
   watchedBtn,
   queueBtn,
   galleryRef,
-  addWatchedBtn,
+  // addWatchedBtn,
   logoLink,
   modalFilmOpen,
   modalTeamOpen,
-  btnWatched,
+  // btnWatched,
   btnQueue,
 };
