@@ -1,7 +1,6 @@
 import isInQueue from './is-in-queue';
-// import { addWatchedBtn } from './refs';
 
-export default function renderQueueBtn(id) {
+export default function renderQueueBtn(id, addQueueBtn) {
   if (isInQueue(id)) {
     addQueueBtn.classList.toggle('queue');
   }
