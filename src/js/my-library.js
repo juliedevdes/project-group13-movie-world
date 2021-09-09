@@ -14,6 +14,7 @@ function clickBtn() {
   activeBorderOn();
   addClassMyLibrary();
   onQueueClick();
+  activeBtnQueue();
 }
 
 function clickBtnHome() {
