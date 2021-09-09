@@ -1,0 +1,44 @@
+.card-movie-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 44px;
+  background-color: Transparent;
+  border: 1px solid $black-color;
+  border-radius: 5px;
+  color: $black-color;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  transition: all $transition-duration $transition-function;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $white-color;
+    border: 1px solid $accent-color;
+  }
+  &:focus {
+    box-shadow: 0px 6px 5px -4px rgba(255, 107, 1, 0.6);
+  }
+  @media screen and (min-width: 768px) {
+    width: 136px;
+    height: 44px;
+  }
+}
+
+.btn-watch.watched {
+  background-color: $accent-color;
+  color: $white-color;
+  border: 1px solid $accent-color;
+}
+.btn-watch.watched:before {
+  content: 'REMOVE FROM WATCHED';
+}
+
+.btn-watch:not(.watched):after {
+  content: 'ADD WATCHED';
+}
