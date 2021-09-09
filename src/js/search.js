@@ -4,7 +4,7 @@ import { modalOpen, gallery, inputRef,successRef, noSuccessRef, homeBtn, logoLin
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './startpage';
-import { onEntry } from './startpage';
+
 
 
 
