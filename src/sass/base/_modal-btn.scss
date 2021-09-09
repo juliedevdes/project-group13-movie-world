@@ -17,9 +17,10 @@
   transition: all $transition-duration $transition-function;
 
   &:hover {
-    background-color: $accent-color;
+    background-color: #ff6b0188;
     color: $white-color;
     border: 1px solid $accent-color;
+    box-shadow: 0px 6px 5px -4px rgba(255, 107, 1, 0.6);
   }
   &:focus {
     box-shadow: 0px 6px 5px -4px rgba(255, 107, 1, 0.6);
