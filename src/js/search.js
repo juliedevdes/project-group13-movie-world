@@ -3,7 +3,7 @@ import cardTpl from '../templates/card-movie-home.hbs';
 import { modalOpen, gallery, inputRef,successRef, noSuccessRef, homeBtn, logoLink } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
-import { cardsMarkUp } from './startpage';
+import { cardsMarkUp } from './genres';
 
 
 
