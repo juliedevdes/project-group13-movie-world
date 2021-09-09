@@ -42,3 +42,16 @@
 .btn-watch:not(.watched):after {
   content: 'ADD WATCHED';
 }
+
+.btn-queue.queue {
+  background-color: $accent-color;
+  color: $white-color;
+  border: 1px solid $accent-color;
+}
+.btn-queue.queue:before {
+  content: 'REMOVE FROM QUEUE';
+}
+
+.btn-queue:not(.queue):after {
+  content: 'ADD QUEUE';
+}
