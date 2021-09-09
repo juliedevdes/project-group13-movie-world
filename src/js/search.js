@@ -59,11 +59,6 @@ async function movieSearcher(searchText, pageNumber) {
   } catch (error) {}
 }
 
-// function createCard(result) {
-//   const markup = cardTpl(result);
-
-//   gallery.insertAdjacentHTML('beforeend', markup);
-// }
 
 function clearInput() {
   gallery.innerHTML = '';
