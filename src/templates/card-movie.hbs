@@ -7,8 +7,25 @@
   />
   <div class='card-movie__section'>
     <h1 class='card-movie__title'>{{original_title}}</h1>
-    <div>
-      <ul class='movie__description list'>
+    <div class='card-movie__info'>
+            <ul class="card-movie__list list">
+                <li class="card-movie__item">
+                    <h3 class="card-movie__item--title">Vote / Votes</h3>
+                    <p class="card-movie__item--data"><span class="card-movie__vote">{{vote_average}}</span> / {{vote_count}}</p>
+                </li>
+                <li class="card-movie__item">
+                    <h3 class="card-movie__item--title">Popularity</h3>
+                    <p class="card-movie__item--data">{{popularity}}</p>
+                </li>
+                <li class="card-movie__item">
+                    <h3 class="card-movie__item--title">Original Title</h3>
+                    <p class="card-movie__item--data">{{original_title}}</p>
+                </li>
+                <li class="card-movie__item">
+                    <h3 class="card-movie__item--title">Genre</h3>
+                    <p class="card-movie__item--data">{{genres}}</p>
+            </ul>
+      {{!-- <ul class='movie__description list'>
         <li class='movie__description--item'>Vote / Votes</li>
         <li class='movie__description--item'>Popularity</li>
         <li class='movie__description--item'>Original Title</li>
@@ -19,13 +36,13 @@
         <li class='movie__info--item'>{{popularity}}</li>
         <li class='movie__info--item'>{{original_title}}</li>
         <li class='movie__info--item'>{{genres}}</li>
-      </ul>
+      </ul> --}}
     </div>
     <h2 class='card-movie__about'>About</h2>
     <p class='card-movie__overview'>{{overview}}</p>
-    <div>
-      <button type='button' class='card-movie-btn btn-watch' data-id='{{id}}'></button>
-      <button class='card-movie-btn btn-queue'></button>
+    <div class='card-movie__btn-section'>
+      <button type='button' class='card-movie-btn btn-watch button' data-id='{{id}}'></button>
+      <button class='card-movie-btn btn-queue button'></button>
     </div>
   </div>
 </div>
