@@ -2,6 +2,7 @@ import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
 import { modalOpen, gallery, inputRef, homeBtn, logoLink, loadMoreRef } from './refs';
 import Spinner from './spinner';
+import { cardsMarkUp } from './genres';
 
 document.addEventListener('DOMContentLoaded', startPage);
 homeBtn.addEventListener('click', startPage);
@@ -21,35 +22,39 @@ async function startPage() {
       spinner.hideSpinner();
     }
     clearInput();
+    cardsMarkUp(cards);
    
-   observer.observe(loadMoreRef)
+  //  observer.observe(loadMoreRef)
   
    
   } catch (error) {}
 }
-export function cardsMarkUp(cards) {
-  // Запрос списка жанров
-  api.fetchGenre().then(genres => {
-    cards.forEach((card, i) => {
-      card.release_date = card.release_date.substring(0, 4);
+// export function cardsMarkUp(cards) {
+//   // Запрос списка жанров
+//   api.fetchGenre().then(genres => {
+//     cards.forEach((card, i) => {
+//       card.release_date = card.release_date.substring(0, 4);
 
-      if (card.genre_ids.length > 3) {
-        card.genre_ids = card.genre_ids.slice(0, 3);
-      }
+//       if (card.genre_ids.length > 3) {
+//         card.genre_ids = card.genre_ids.slice(0, 3);
+//       }
 
-      card.genre_ids.forEach((genre, index) => {
-        genres.forEach(genrCard => {
-          if (genrCard.id === genre) card.genre_ids[index] = ' ' + genrCard.name;
-        });
-      });
-    });
+//       card.genre_ids.forEach((genre, index) => {
+//         genres.forEach(genrCard => {
+//           if (genrCard.id === genre) card.genre_ids[index] = ' ' + genrCard.name;
+//         });
+//       });
+//     });
 
-    gallery.insertAdjacentHTML('beforeend', cardTpl(cards));
+//     gallery.insertAdjacentHTML('beforeend', cardTpl(cards));
 
-    currentMovies.movies = cards;
-  });
-}
+//     currentMovies.movies = cards;
+//   });
+// }
 
+// const currentMovies = {
+//   movies: [],
+// };
 // function createCard(movies) {
 //   gallery.insertAdjacentHTML('beforeend', cardTpl(movies));
 // }
@@ -57,34 +62,32 @@ export function cardsMarkUp(cards) {
 function clearInput() {
   gallery.innerHTML = '';
 }
-const currentMovies = {
-  movies: [],
-};
+
 
 // intersectionObserver for infinite scroll:
-export  function  onEntry( entries )  {
-  entries.forEach(entry => {
+// export  function  onEntry( entries )  {
+//   entries.forEach(entry => {
  
-    if (entry.isIntersecting) {
+//     if (entry.isIntersecting) {
      
-        api.PopularMovie(currentPage).then(cards => {
-        if (cards.length < 1) {
-          window.alert('No images to display 😢');
-          observer.unobserve(loadMoreRef);
-          return;
-        }
+//         api.PopularMovie(currentPage).then(cards => {
+//         if (cards.length < 1) {
+//           window.alert('No images to display 😢');
+//           observer.unobserve(loadMoreRef);
+//           return;
+//         }
     
-        if(cards.page >= 1 ) 
-          cards.page = currentPage++;
+//         if(cards.page >= 1 ) 
+//           cards.page = currentPage++;
        
-        const moviesToRender = cards.results;
-        // gallery.insertAdjacentHTML('beforeend', cardTpl(moviesToRender));
-        cardsMarkUp(moviesToRender)
-      });
-     }
-  });
-};
+//         const moviesToRender = cards.results;
+//         // gallery.insertAdjacentHTML('beforeend', cardTpl(moviesToRender));
+//         cardsMarkUp(moviesToRender)
+//       });
+//      }
+//   });
+// };
 
-const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '200px',
-});
+// const observer = new IntersectionObserver(onEntry, {
+//   rootMargin: '200px',
+// });
