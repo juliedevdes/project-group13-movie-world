@@ -4,7 +4,9 @@ import { modalFilmOpen } from './refs';
 import api from './apiService';
 import renderWatchedBtn from './render-watched-btn';
 import getWatched from './get-watched';
+import getQueue from './queue/get-queue';
 import isWatched from './is-watched';
+import isInQueue from './queue/is-in-queue';
 import { compile } from 'handlebars';
 
 modalFilmOpen.addEventListener('click', onOpenModalFilm);
@@ -70,9 +72,6 @@ function onOpenModalFilm(event) {
           let index = watchedMovies.findIndex(element => {
             return element.id == currentId;
           });
-          console.log(currentId);
-          console.log(watchedMovies);
-          console.log(index);
           watchedMovies.splice(index, 1);
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           addWatchedBtn.classList.toggle('watched');
@@ -81,6 +80,42 @@ function onOpenModalFilm(event) {
         watchedMovies.push(data);
         localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
         addWatchedBtn.classList.toggle('watched');
+      }
+
+      let queueMovies = [];
+
+      addQueue();
+      function addQueue() {
+        const addQueueBtn = document.querySelector('.btn-queue');
+        if (isInQueue(currentId)) {
+          addQueueBtn.classList.toggle('queue');
+        }
+        addQueueBtn.addEventListener('click', onAddQueueClick);
+      }
+
+      function onAddQueueClick(e) {
+        const addQueueBtn = e.target;
+
+        if (localStorage.getItem('queueMovies') === null) {
+          queueMovies = [];
+        }
+        if (localStorage.getItem('queueMovies') !== null) {
+          queueMovies = getQueue();
+        }
+
+        if (isInQueue(currentId)) {
+          let index = queueMovies.findIndex(element => {
+            return element.id == currentId;
+          });
+
+          queueMovies.splice(index, 1);
+          localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+          addQueueBtn.classList.toggle('queue');
+          return;
+        }
+        queueMovies.push(data);
+        localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+        addQueueBtn.classList.toggle('queue');
       }
     })
     .catch(error => {

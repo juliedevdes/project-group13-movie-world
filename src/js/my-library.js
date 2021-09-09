@@ -8,11 +8,12 @@ import {
   queueBtn,
   logoLink,
 } from './refs';
+import { onQueueClick } from './queue/renderQueue';
 
 function clickBtn() {
   activeBorderOn();
   addClassMyLibrary();
-  activeBtnQueue();
+  onQueueClick();
 }
 
 function clickBtnHome() {
@@ -21,11 +22,8 @@ function clickBtnHome() {
 }
 
 myLibraryBtn.addEventListener('click', clickBtn);
-
 homeBtn.addEventListener('click', clickBtnHome);
-
 logoLink.addEventListener('click', clickBtnHome);
-
 queueBtn.addEventListener('click', activeBtnQueue);
 watchedBtn.addEventListener('click', activeBtnWatched);
 

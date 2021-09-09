@@ -1,6 +1,5 @@
 const modalFilmOpen = document.querySelector('.modal-film-open');
 const modalTeamOpen = document.querySelector('.modal-team-open');
-const btnQueue = document.querySelector('.btn-queue');
 const modalOpen = document.querySelector('.modal-open');
 const gallery = document.querySelector('.gallery__list');
 const inputRef = document.querySelector('.search__input');
@@ -40,6 +39,5 @@ export {
   logoLink,
   modalFilmOpen,
   modalTeamOpen,
-  btnQueue,
   loadMoreRef,
 };
