@@ -1,13 +1,15 @@
 import * as basicLightbox from 'basiclightbox';
 import modalMovieTpl from '../templates/card-movie';
-import { modalFilmOpen } from './refs';
+import { modalFilmOpen, queueBtn, watchedBtn } from './refs';
 import api from './apiService';
 import renderWatchedBtn from './render-watched-btn';
+import renderQueueBtn from './queue/render-queue-btn';
 import getWatched from './get-watched';
 import getQueue from './queue/get-queue';
 import isWatched from './is-watched';
 import isInQueue from './queue/is-in-queue';
 import { compile } from 'handlebars';
+import renderGallery from './render-gallery';
 
 modalFilmOpen.addEventListener('click', onOpenModalFilm);
 let currentId;
@@ -50,11 +52,10 @@ function onOpenModalFilm(event) {
       let watchedMovies = [];
 
       addWatched();
+
       function addWatched() {
         const addWatchedBtn = document.querySelector('.btn-watch');
-        if (isWatched(currentId)) {
-          addWatchedBtn.classList.toggle('watched');
-        }
+        renderWatchedBtn(currentId, addWatchedBtn);
         addWatchedBtn.addEventListener('click', onAddWatchedClick);
       }
 
@@ -64,6 +65,7 @@ function onOpenModalFilm(event) {
         if (localStorage.getItem('watchedMovies') === null) {
           watchedMovies = [];
         }
+
         if (localStorage.getItem('watchedMovies') !== null) {
           watchedMovies = getWatched();
         }
@@ -72,11 +74,18 @@ function onOpenModalFilm(event) {
           let index = watchedMovies.findIndex(element => {
             return element.id == currentId;
           });
+
           watchedMovies.splice(index, 1);
+
+          if (watchedBtn.classList.contains('active-btn')) {
+            renderGallery(watchedMovies);
+          }
+
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           addWatchedBtn.classList.toggle('watched');
           return;
         }
+
         watchedMovies.push(data);
         localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
         addWatchedBtn.classList.toggle('watched');
@@ -85,11 +94,10 @@ function onOpenModalFilm(event) {
       let queueMovies = [];
 
       addQueue();
+
       function addQueue() {
         const addQueueBtn = document.querySelector('.btn-queue');
-        if (isInQueue(currentId)) {
-          addQueueBtn.classList.toggle('queue');
-        }
+        renderQueueBtn(currentId, addQueueBtn);
         addQueueBtn.addEventListener('click', onAddQueueClick);
       }
 
@@ -99,6 +107,7 @@ function onOpenModalFilm(event) {
         if (localStorage.getItem('queueMovies') === null) {
           queueMovies = [];
         }
+
         if (localStorage.getItem('queueMovies') !== null) {
           queueMovies = getQueue();
         }
@@ -109,18 +118,23 @@ function onOpenModalFilm(event) {
           });
 
           queueMovies.splice(index, 1);
+
+          if (queueBtn.classList.contains('active-btn')) {
+            renderGallery(queueMovies);
+          }
+
           localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
           addQueueBtn.classList.toggle('queue');
           return;
         }
+
         queueMovies.push(data);
         localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
         addQueueBtn.classList.toggle('queue');
       }
     })
+
     .catch(error => {
       console.log(error);
     });
-
-  // refs.modalFilmOpen.removeEventListener('click', onOpenModalFilm);
 }

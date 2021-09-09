@@ -1,7 +1,6 @@
 import isWatched from './is-watched';
-import { addWatchedBtn } from './refs';
 
-export default function renderWatchedBtn(id) {
+export default function renderWatchedBtn(id, addWatchedBtn) {
   if (isWatched(id)) {
     addWatchedBtn.classList.toggle('watched');
   }
