@@ -3,13 +3,18 @@ import cardTpl from '../templates/card-movie-home.hbs';
 import { modalOpen, gallery, inputRef, homeBtn, logoLink, loadMoreRef } from './refs';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
+import Pagination from 'tui-pagination';
+import { options } from './pagination';
+
+
 
 document.addEventListener('DOMContentLoaded', startPage);
 homeBtn.addEventListener('click', startPage);
 logoLink.addEventListener('click', startPage);
+ 
 
 const spinner = new Spinner();
-
+const pagination = new Pagination('#tui-pagination-container', options);
 let currentPage = 1 ;
 
 async function startPage() {
@@ -21,73 +26,40 @@ async function startPage() {
     if (cards !== []) {
       spinner.hideSpinner();
     }
+    
     clearInput();
     cardsMarkUp(cards);
-   
-  //  observer.observe(loadMoreRef)
-  
-   
+    
   } catch (error) {}
 }
-// export function cardsMarkUp(cards) {
-//   // Запрос списка жанров
-//   api.fetchGenre().then(genres => {
-//     cards.forEach((card, i) => {
-//       card.release_date = card.release_date.substring(0, 4);
 
-//       if (card.genre_ids.length > 3) {
-//         card.genre_ids = card.genre_ids.slice(0, 3);
-//       }
-
-//       card.genre_ids.forEach((genre, index) => {
-//         genres.forEach(genrCard => {
-//           if (genrCard.id === genre) card.genre_ids[index] = ' ' + genrCard.name;
-//         });
-//       });
-//     });
-
-//     gallery.insertAdjacentHTML('beforeend', cardTpl(cards));
-
-//     currentMovies.movies = cards;
-//   });
-// }
-
-// const currentMovies = {
-//   movies: [],
-// };
-// function createCard(movies) {
-//   gallery.insertAdjacentHTML('beforeend', cardTpl(movies));
-// }
 
 function clearInput() {
   gallery.innerHTML = '';
 }
 
 
-// intersectionObserver for infinite scroll:
-// export  function  onEntry( entries )  {
-//   entries.forEach(entry => {
- 
-//     if (entry.isIntersecting) {
-     
-//         api.PopularMovie(currentPage).then(cards => {
-//         if (cards.length < 1) {
-//           window.alert('No images to display 😢');
-//           observer.unobserve(loadMoreRef);
-//           return;
-//         }
-    
-//         if(cards.page >= 1 ) 
-//           cards.page = currentPage++;
-       
-//         const moviesToRender = cards.results;
-//         // gallery.insertAdjacentHTML('beforeend', cardTpl(moviesToRender));
-//         cardsMarkUp(moviesToRender)
-//       });
-//      }
-//   });
-// };
+api.PopularMovie(1).then(res => {
+  pagination.reset(res.total_pages);
+  
+});
 
-// const observer = new IntersectionObserver(onEntry, {
-//   rootMargin: '200px',
-// });
+pagination.on('afterMove', event => {
+  
+  const currentPage = event.page;
+
+
+ clearInput();
+  api.PopularMovie(currentPage).then(res => {
+    cardsMarkUp(res.results);
+    currentMovies.movies = res.results;
+  
+  });
+});
+const currentMovies = {
+  movies: [],
+};
+
+
+
+

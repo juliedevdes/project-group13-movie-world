@@ -1,12 +1,13 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef,successRef, noSuccessRef, homeBtn, logoLink } from './refs';
+import { modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
+import Pagination from 'tui-pagination';
+import { options } from './pagination';
 
-
-
+const pagination = new Pagination('#tui-pagination-container', options);
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
 homeBtn.addEventListener('click', clearSearch);
@@ -20,7 +21,6 @@ function searchMovie(e) {
   const inputText = e.target.value;
 
   if (inputText.length <= 1) {
-   
     return;
   }
   movieSearcher(inputText, page);
@@ -35,35 +35,45 @@ async function movieSearcher(searchText, pageNumber) {
     const data = await api.MovieSearch(searchText, pageNumber);
 
     const results = data.results;
-   
-
     if (results.length === 0) {
       noResults();
-      
-     return;
+
+      return;
     }
     clearInput();
-
+    // console.log(res.total_pages)
+    // pagination.reset(res.total_pages);
     cardsMarkUp(results);
- 
 
     if (results !== []) {
       spinner.showSpinner();
       successRef.textContent = `Сongratulations!!! We found ${data.total_results} results of request "${searchText}" `;
       setTimeout(function () {
         spinner.hideSpinner();
-    successRef.textContent = '';
-  }, 1500);
+        successRef.textContent = '';
+      }, 1500);
     }
-
   } catch (error) {}
 }
 
 
+
+
+// pagination.on('afterMove', event => {
+//   const currentPage = event.page;
+//   window.scrollTo(scrollX, 0);
+
+//   clearInput();
+//   // api.MovieSearch(currentPage).then(res => {
+//   //   cardsMarkUp(res.results);
+//   //   currentMovies.movies = res.results;
+//   //   console.log(res)
+//   // });
+// });
+
 function clearInput() {
   gallery.innerHTML = '';
 }
-
 
 function noResults() {
   spinner.showSpinner();
@@ -76,4 +86,6 @@ function noResults() {
   clearInput();
 }
 
-
+const currentMovies = {
+  movies: [],
+};
