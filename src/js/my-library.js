@@ -9,6 +9,7 @@ import {
   logoLink,
 } from './refs';
 import { onQueueClick } from './queue/renderQueue';
+import isLibraryEmpty from './my-library-set-bg-pic';
 
 function clickBtn() {
   activeBorderOn();
@@ -20,6 +21,7 @@ function clickBtn() {
 function clickBtnHome() {
   activeBorderHome();
   addClassHome();
+  isLibraryEmpty();
 }
 
 myLibraryBtn.addEventListener('click', clickBtn);
@@ -51,6 +53,7 @@ function activeBtnQueue() {
   queueBtn.classList.remove('primary-white');
   watchedBtn.classList.remove('active-btn');
   queueBtn.classList.add('active-btn');
+  isLibraryEmpty();
 }
 
 function activeBtnWatched() {
@@ -59,6 +62,7 @@ function activeBtnWatched() {
   watchedBtn.classList.remove('accent');
   watchedBtn.classList.add('active-btn');
   queueBtn.classList.remove('active-btn');
+  isLibraryEmpty();
 }
 
 function addClassHome() {
