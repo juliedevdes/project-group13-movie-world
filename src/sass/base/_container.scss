@@ -19,8 +19,13 @@
 }
 
 .empty {
-  background-image: url(http://risovach.ru/upload/2014/10/mem/pochemu-by-i-net_63633273_orig_.jpeg);
+  background-image: url(../images/bubble.png);
   background-repeat: no-repeat;
-  background-position: top center;
-  min-height: 248px;
+  background-position: center center;
+  background-size: 250px;
+  min-height: 300px;
+  @media screen and (min-width: 768px) {
+    background-size: 600px;
+    min-height: 500px;
+  }
 }
