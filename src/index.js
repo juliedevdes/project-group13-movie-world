@@ -16,3 +16,4 @@ import spinner from './js/spinner';
 import toTop from './js/to-top';
 import lib from './js/my-library';
 import isWatched from './js/watched/is-watched';
+import filter from './js/filter-movies';
