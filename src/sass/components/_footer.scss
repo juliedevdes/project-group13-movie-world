@@ -1,14 +1,16 @@
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.footer {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
 }
 .page-footer {
-  height: 65px;
+  height: fit-content;
   width: 100%;
-  position: fixed;
-  bottom: 0%;
+  // position: fixed;
+  // bottom: 0%;
 }
 .page-footer.light-theme {
   background-color: $footer-bg-color;
@@ -66,11 +68,11 @@
 .footer__text {
   color: $footer-text-color;
   text-align: left;
-  line-height: 28px;
   font-size: 14px;
 }
 .footer__text--down {
   display: block;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 768px) {
