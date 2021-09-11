@@ -10,6 +10,7 @@ import isWatched from './watched/is-watched';
 import isInQueue from './queue/is-in-queue';
 import { compile } from 'handlebars';
 import renderGallery from './render-gallery';
+import isLibraryEmpty from './my-library-set-bg-pic';
 
 modalFilmOpen.addEventListener('click', onOpenModalFilm);
 let currentId;
@@ -79,16 +80,24 @@ function onOpenModalFilm(event) {
 
           if (watchedBtn.classList.contains('active-btn')) {
             renderGallery(watchedMovies);
+            // console.log(watchedMovies);
+            // isLibraryEmpty();
+            // console.log(watchedMovies);
           }
 
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
           addWatchedBtn.classList.toggle('watched');
+          isLibraryEmpty();
           return;
         }
 
         watchedMovies.push(data);
         localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+        isLibraryEmpty();
         addWatchedBtn.classList.toggle('watched');
+        if (watchedBtn.classList.contains('active-btn')) {
+          renderGallery(watchedMovies);
+        }
       }
 
       let queueMovies = [];
@@ -125,12 +134,17 @@ function onOpenModalFilm(event) {
 
           localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
           addQueueBtn.classList.toggle('queue');
+          isLibraryEmpty();
           return;
         }
 
         queueMovies.push(data);
         localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+        isLibraryEmpty();
         addQueueBtn.classList.toggle('queue');
+        if (queueBtn.classList.contains('active-btn')) {
+          renderGallery(queueMovies);
+        }
       }
     })
 
