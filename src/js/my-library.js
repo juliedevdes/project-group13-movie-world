@@ -72,6 +72,8 @@ function addClassHome() {
 
   bntlibrary.classList.add('visually-hidden');
   inpuForm.classList.remove('visually-hidden');
+  watchedBtn.classList.remove('active-btn');
+  queueBtn.classList.remove('active-btn');
 }
 
 function activeBorderHome() {

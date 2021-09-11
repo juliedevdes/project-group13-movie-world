@@ -8,7 +8,6 @@ import getWatched from './watched/get-watched';
 import getQueue from './queue/get-queue';
 import isWatched from './watched/is-watched';
 import isInQueue from './queue/is-in-queue';
-import { compile } from 'handlebars';
 import renderGallery from './render-gallery';
 import isLibraryEmpty from './my-library-set-bg-pic';
 
@@ -80,9 +79,6 @@ function onOpenModalFilm(event) {
 
           if (watchedBtn.classList.contains('active-btn')) {
             renderGallery(watchedMovies);
-            // console.log(watchedMovies);
-            // isLibraryEmpty();
-            // console.log(watchedMovies);
           }
 
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
