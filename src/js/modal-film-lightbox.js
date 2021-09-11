@@ -80,9 +80,6 @@ function onOpenModalFilm(event) {
 
           if (watchedBtn.classList.contains('active-btn')) {
             renderGallery(watchedMovies);
-            // console.log(watchedMovies);
-            // isLibraryEmpty();
-            // console.log(watchedMovies);
           }
 
           localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
