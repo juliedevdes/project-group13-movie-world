@@ -55,55 +55,6 @@ fetchTopMovies(page);
 }
 
 
- 
-
-// const spinner = new Spinner();
-// const pagination = new Pagination('#tui-pagination-container', options);
-
-
-// async function startPage() {
-//   try {
-//      const data = await api.PopularMovie(currentPage);
-
-//     const cards = data.results;
-//     spinner.showSpinner();
-//     if (cards !== []) {
-//       spinner.hideSpinner();
-//     }
-    
-//     clearInput();
-//     cardsMarkUp(cards);
-    
-//   } catch (error) {}
-// }
-
-
-   
-
-// api.PopularMovie(1).then(res => {
-//   pagination.reset(res.total_pages);
-  
-// });
-
-// pagination.on('afterMove', event => {
-  
-//   const currentPage = event.page;
-
-
-//  clearInput();
-//   api.PopularMovie(currentPage).then(res => {
-//     cardsMarkUp(res.results);
-//     currentMovies.movies = res.results;
-  
-//   });
-// });
-
-
-// const currentMovies = {
-//   movies: [],
-// };
-
-
 
 
 

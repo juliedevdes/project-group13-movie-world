@@ -1,6 +1,6 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink } from './refs';
+import { modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink, pagination } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
@@ -17,8 +17,8 @@ let arr = [];
 // const pagination = new Pagination('#tui-pagination-container', options);
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
-// homeBtn.addEventListener('click', clearSearch);
-// logoLink.addEventListener('click', clearSearch);
+homeBtn.addEventListener('click', );
+logoLink.addEventListener('click',);
 
 const spinner = new Spinner();
 export function searchMovie(e) {
@@ -33,7 +33,7 @@ export function searchMovie(e) {
         fPagination().reset();
       } else {
         spinner.showSpinner();
-        // successRef.textContent = `Сongratulations!!! We found ${data.total_results} results of request "${searchText}" `;
+        successRef.textContent = `Сongratulations!!! We found ${res.total_results} results of request "${movie}" `;
         setTimeout(function () {
           spinner.hideSpinner();
           successRef.textContent = '';
@@ -50,25 +50,24 @@ export function searchMovie(e) {
         instance.on('afterMove', event => {
           const currentPage = event.page;
             
-          // onMore(movie, currentPage);
+          onMore(movie, currentPage);
         });
         page = page + 1;
-        // // //получаем массив обЪектов фильмов, которые пришли по запросу
-        const data = res.results.map(el => {
-          return el;
         
-        });
+        const data = res.results;
+        
+       cardsMarkUp(data,currentPage)
         clearInput();
-      //  renderFilms(data);
+     
         return res.results;
-        // cardsMarkUp(res);
-        renderFilms(data, arrOfGenres, totalResult);
-      } cardsMarkUp(movie);
+        
+      } ;
     })
+      
       .catch(error => {
         console.dir(error);
       });
-  }
+  } 
 }
     
 inputRef.addEventListener('input', getTopMoviesAgain);
@@ -103,79 +102,24 @@ function clearInput() {
   }
   return;
 }
-function renderFilms(data, arrOfGenres, totalResult) {
-  //записываем массивы названия жанров в каждый обЪект фильма
-  for (let index = 0; index < 20; index++) {
-    data[index].genre_names = arrOfGenres[index];
-    totalResult = totalResult - 1;
-    if (totalResult === 0) {
-      break;
-    }
+async function onMore(movie, currentPage) {
+  try {
+    
+    
+    const cards = await api.MovieSearch(movie, currentPage);
+    const data = cards.results;
+  
+    clearInput();
+    
+   cardsMarkUp(data);
+   
+   
+  } catch (error) {
+    console.log(error);
   }
 }
-
-// function searchMovie(e) {
-//   e.preventDefault();
-//   const page = 1;
-//   const inputText = e.target.value;
-
-//   if (inputText.length <= 1) {
-//     return;
-//   }
-//   movieSearcher(inputText, page);
-// }
-
-// function clearSearch() {
-//   inputRef.value = '';
-// }
-
-// async function movieSearcher(searchText, pageNumber) {
-//   try {
-//     const data = await api.MovieSearch(searchText, pageNumber);
-
-//     const results = data.results;
-//     if (results.length === 0) {
-//       noResults();
-
-//       return;
-//     }
-//     clearInput();
-//     // console.log(res.total_pages)
-//     // pagination.reset(res.total_pages);
-//     cardsMarkUp(results);
-
-//     if (results !== []) {
-//       spinner.showSpinner();
-//       successRef.textContent = `Сongratulations!!! We found ${data.total_results} results of request "${searchText}" `;
-//       setTimeout(function () {
-//         spinner.hideSpinner();
-//         successRef.textContent = '';
-//       }, 1500);
-//     }
-//   } catch (error) {}
-// }
-
-
-
-
-// // pagination.on('afterMove', event => {
-// //   const currentPage = event.page;
-// //   window.scrollTo(scrollX, 0);
-
-// //   clearInput();
-// //   // api.MovieSearch(currentPage).then(res => {
-// //   //   cardsMarkUp(res.results);
-// //   //   currentMovies.movies = res.results;
-// //   //   console.log(res)
-// //   // });
-// // });
-
-// function clearInput() {
-//   gallery.innerHTML = '';
-// }
-
-
-
-// const currentMovies = {
-//   movies: [],
+function clearSearch() {
+ 
+  resetPage();
+}
 
