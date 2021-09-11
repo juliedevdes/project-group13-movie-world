@@ -1,49 +1,47 @@
-.tui-pagination .tui-first-child.tui-is-selected {
-  background-color: $accent-color;
-}
-
-#pagination-thumb .tui-pagination {
-  margin: 35px 0 60px 0;
-}
-
-#pagination-thumb .tui-pagination .tui-first-child.tui-is-selected {
-  border-left: 1px solid $accent-color;
-}
-
-#pagination-thumb .tui-pagination .tui-is-selected,
-.tui-pagination strong {
-  background: $accent-color;
-  border-color: $accent-color;
-  border-radius: 5px;
-  width: 40px;
-  height: 40px;
-  line-height: 2;
-}
-
-#pagination-thumb .tui-pagination .tui-page-btn {
-  border: none;
-  font-family: Roboto;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-}
-
 .tui-pagination .tui-first,
-.tui-pagination .tui-last,
-.tui-pagination .tui-next,
-.tui-pagination .tui-next-is-ellip,
 .tui-pagination .tui-prev,
-.tui-pagination .tui-prev-is-ellip {
-  font-family: $main-font;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
+.tui-pagination .tui-next,
+.tui-pagination .tui-last,
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip {
+  height: 30px;
 }
 
-.turnoff {
-  display: none;
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: #fff;
+  background: orange;
+  border-color: orange;
+}
+.tui-pagination .tui-is-selected:hover {
+  background-color: orange;
 }
 
-.tui-pagination .tui-page-btn.tui-prev {
-  margin-right: 4px;
+.dark-theme {
+  .tui-pagination .tui-page-btn {
+    color: white;
+  }
+  .tui-pagination .tui-page-btn:hover {
+    background-color: gray;
+  }
+  .tui-pagination .tui-ico-first,
+  .tui-pagination .tui-ico-prev,
+  .tui-pagination .tui-ico-next,
+  .tui-pagination .tui-ico-last,
+  .tui-pagination .tui-ico-ellip {
+    filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(198deg) brightness(126%)
+      contrast(112%);
+  }
+}
+
+.tui-pagination .tui-first-child.tui-is-selected {
+  border-left: 1px solid orange;
+}
+
+.tui-pagination .tui-last-child.tui-is-selected {
+  border-right: 1px solid orange;
+}
+
+.hidden {
+  opacity: 0;
 }
