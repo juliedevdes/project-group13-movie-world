@@ -18,6 +18,7 @@ const queueBtn = document.querySelector('.libr-queue');
 const backgroundHome = document.querySelector('.page-header');
 const galleryRef = document.querySelector('.gallery__list');
 const loadMoreRef = document.querySelector('.load-more');
+const pagination = document.querySelector('#tui-pagination-container');
 
 export {
   modalOpen,
@@ -40,4 +41,5 @@ export {
   modalFilmOpen,
   modalTeamOpen,
   loadMoreRef,
+  pagination
 };
