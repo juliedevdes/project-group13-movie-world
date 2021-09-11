@@ -17,8 +17,8 @@ let arr = [];
 // const pagination = new Pagination('#tui-pagination-container', options);
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
-homeBtn.addEventListener('click', );
-logoLink.addEventListener('click',);
+// homeBtn.addEventListener('click', );
+// logoLink.addEventListener('click',);
 
 const spinner = new Spinner();
 export function searchMovie(e) {

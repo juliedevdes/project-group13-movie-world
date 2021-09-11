@@ -1,0 +1,49 @@
+.tui-pagination .tui-first-child.tui-is-selected {
+  background-color: $accent-color;
+}
+
+#pagination-thumb .tui-pagination {
+  margin: 35px 0 60px 0;
+}
+
+#pagination-thumb .tui-pagination .tui-first-child.tui-is-selected {
+  border-left: 1px solid $accent-color;
+}
+
+#pagination-thumb .tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  background: $accent-color;
+  border-color: $accent-color;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  line-height: 2;
+}
+
+#pagination-thumb .tui-pagination .tui-page-btn {
+  border: none;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.tui-pagination .tui-first,
+.tui-pagination .tui-last,
+.tui-pagination .tui-next,
+.tui-pagination .tui-next-is-ellip,
+.tui-pagination .tui-prev,
+.tui-pagination .tui-prev-is-ellip {
+  font-family: $main-font;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.turnoff {
+  display: none;
+}
+
+.tui-pagination .tui-page-btn.tui-prev {
+  margin-right: 4px;
+}
