@@ -3,13 +3,13 @@ import cardTpl from '../templates/card-movie-home.hbs';
 import { gallery } from './refs'
 
 
-const currentMovies = {
-  movies: [],
-};
- export function cardsMarkUp(cards) {
+// const currentMovies = {
+//   movies: [],
+// };
+ export function cardsMarkUp(movie) {
   
   api.fetchGenre().then(genres => {
-    cards.forEach((card, i) => {
+   movie.map((card, i) => {
       card.release_date = card.release_date.substring(0, 4);
 
       if (card.genre_ids.length > 3) {
@@ -25,9 +25,9 @@ const currentMovies = {
       });
     });
 
-    gallery.insertAdjacentHTML('beforeend', cardTpl(cards));
+    gallery.insertAdjacentHTML('beforeend', cardTpl(movie));
 
-    currentMovies.movies = cards;
+    // currentMovies.movies = cards;
   });
     
 }

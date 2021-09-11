@@ -41,7 +41,7 @@
 
   &__logo-name {
     font-size: 30px;
-    color: #ffffff;
+    color: #fff;
     line-height: 35.16px;
     text-align: center;
 
@@ -62,7 +62,7 @@
 
   &__nav-link {
     cursor: pointer;
-    color: white;
+    color: #fff;
     outline-style: none;
     text-decoration: none;
     font-weight: 500;
@@ -169,7 +169,6 @@
 #notify-text {
   font-size: 14px;
   line-height: 16px;
-  margin-bottom: 5px;
   text-align: left;
   position: absolute;
 
@@ -178,7 +177,8 @@
   }
 
   &.success {
-    color: #ffffff;
+    color: #fff;
+    margin-left: 25px;
   }
 }
 
@@ -196,7 +196,7 @@
     height: 44px;
 
     text-align: center;
-    color: white;
+    color: #fff;
     font-weight: 500;
     border-radius: 5px;
     font-size: 12px;
@@ -205,28 +205,28 @@
     margin-bottom: 8px;
 
     &.accent {
-      border: 1px solid #ffffff;
+      border: 1px solid #fff;
       transition: all 300ms ease-in;
       background-color: transparent;
     }
 
     &.primary-white {
-      border: 1px solid #ffffff;
+      border: 1px solid #fff;
       transition: all 300ms ease-in;
       background-color: transparent;
     }
 
     &.primary-white:hover,
     &.primary-white:focus {
-      border: 1px solid white;
-      color: white;
+      border: 1px solid #fff;
+      color: #fff;
       background-color: #ff6b0188;
     }
 
     &.accent:hover,
     &.accent:focus {
-      border: 1px solid white;
-      color: white;
+      border: 1px solid #fff;
+      color: #fff;
       background-color: #ff6b0188;
     }
   }

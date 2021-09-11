@@ -1,7 +1,8 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import api from './apiService';
-import { gallery } from './refs';
+import '../sass/components/_pagination.scss'
+
+
 
 const options = {
   totalItems: 1000,
@@ -28,6 +29,19 @@ const options = {
       '</a>',
   },
 };
+
+   
+
+const fPagination = () => {
+  const container = document.getElementById('tui-pagination-container');
+  const instance = new Pagination(container, options);
+  return instance;
+};
+
+export default fPagination;
+
+
+
 
 
 
