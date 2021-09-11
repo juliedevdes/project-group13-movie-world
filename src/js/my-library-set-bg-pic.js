@@ -5,11 +5,12 @@ import getQueue from './queue/get-queue';
 export default function isLibraryEmpty() {
   let queue = getQueue();
   let watched = getWatched();
-  console.log('вызов');
+
   if (!myLibraryBtn.classList.contains('is-active')) {
     galleryRef.classList.remove('empty');
     return;
   }
+
   if (watchedBtn.classList.contains('active-btn')) {
     if (watched === null) {
       galleryRef.classList.add('empty');
@@ -20,6 +21,7 @@ export default function isLibraryEmpty() {
     } else galleryRef.classList.remove('empty');
     return;
   }
+
   if (queueBtn.classList.contains('active-btn')) {
     if (queue === null) {
       galleryRef.classList.add('empty');
