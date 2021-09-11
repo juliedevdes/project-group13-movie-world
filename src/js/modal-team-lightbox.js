@@ -3,6 +3,7 @@ import { modalTeamOpen } from './refs';
 
 import svgUrl from '../images/sprite.svg';
 
+//all adaptive team-images imported to work with lightbox
 import alexPMob from '../images/team/team-adaptive/mobile/alexander-ponomarenko.jpg';
 import alexPTab from '../images/team/team-adaptive/tablet/alexander-ponomarenko.jpg';
 import alexPDesk from '../images/team/team-adaptive/desktop/alexander-ponomarenko.jpg';
@@ -38,7 +39,6 @@ import juliaDesk from '../images/team/team-adaptive/desktop/julia-ohrimenko.jpg'
 modalTeamOpen.addEventListener('click', onOpenModalTeam);
 
 function onOpenModalTeam(event) {
-  // console.log(event);
   const instance = basicLightbox.create(markup, {
     onShow: instance => {
       instance.element().querySelector('svg').onclick = instance.close;
@@ -57,6 +57,7 @@ function onOpenModalTeam(event) {
   }
 }
 
+//html for team modal here
 const markup = `<div class='team-modal'>
 <button type='button' class='team-modal__close-btn'>
   <svg class='team-modal__close-icon' width='20' height='20'>
