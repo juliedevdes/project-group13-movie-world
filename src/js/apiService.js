@@ -17,10 +17,10 @@ export default {
   },
 
   // Поиск по ключевому слову (по инпуту в поле поиска)
-  async MovieSearch(text, page) {
+  async MovieSearch(movie, page) {
     try {
       const { data } = await axios.get(
-        `${SEARCH_URL}?api_key=${API_KEY}&query=${text}&page=${page}`,
+        `${SEARCH_URL}?api_key=${API_KEY}&query=${movie}&page=${page}`,
       );
       return data;
     } catch (error) {
@@ -49,4 +49,19 @@ export default {
       })
       .catch(error => console.log(error));
   },
+  get query() {
+    return searchQuery;
+  },
+   resetPage() {
+    page = 1;
+  },
+   set query(newQuery) {
+  searchQuery = newQuery;
+  },
+   setPage(pageNumber) {
+    page = pageNumber;
+  }
+
+
 };
+
