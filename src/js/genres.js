@@ -11,10 +11,11 @@ const currentMovies = {
   api.fetchGenre().then(genres => {
     cards.forEach((card, i) => {
       card.release_date = card.release_date.substring(0, 4);
+      card.vote_average = ' ';
 
       if (card.genre_ids.length > 3) {
           card.genre_ids = card.genre_ids.slice(0, 3)
-            card.genre_ids[3]= 'and other';
+            card.genre_ids[3]= ' and other';
         }
       card.genre_ids.forEach((genre, index) => {
         genres.forEach(genreCard => {
