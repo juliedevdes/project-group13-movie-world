@@ -10,28 +10,28 @@ let yearValue = '';
 let genreValue = '';
 const spinner = new Spinner();
 
-function movieFilter() {
-  // api.fetchMovies();
-  // incrementPage() {
-  //   this._page += 1;
-  // }
-  // resetPage() {
-  //   this._page = 1;
-  // }
-  // decrementPage() {
-  //   this._page -= 1;
-  // }
-  // get page() {
-  //   return this._page;
-  // }
-  // set page(value) {
-  //   this._page = value;
-  // }
-}
+// function movieFilter() {
+//   // api.fetchMovies();
+//   // incrementPage() {
+//   //   this._page += 1;
+//   // }
+//   // resetPage() {
+//   //   this._page = 1;
+//   // }
+//   // decrementPage() {
+//   //   this._page -= 1;
+//   // }
+//   // get page() {
+//   //   return this._page;
+//   // }
+//   // set page(value) {
+//   //   this._page = value;
+//   // }
+// }
 
 filterInput.forEach(item => {
   item.addEventListener('change', event => {
-    movieFilter().resetPage();
+    api.fetchMovies();
     inputRef.value = '';
     yearValue = yearPicker.value;
     genreValue = genrePicker.value;
@@ -39,9 +39,15 @@ filterInput.forEach(item => {
   });
 });
 
+// function createCard(genre, year) {
+//   api.fetchMovies(genre, year);
+//   const movies = res.results;
+//   cardsMarkUp();
+// }
 function createCard(genre, year) {
-  movieFilter(genre, year);
-  gallery.innerHTML = cardTpl(cardsMarkUp(cards));
+  api.fetchMovies(genre, year).then(res => {
+    gallery.innerHTML = cardsMarkUp(res.results);
+  })
 }
 
 function yearPickerMenu() {
