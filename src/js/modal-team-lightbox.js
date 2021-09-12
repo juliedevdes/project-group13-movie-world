@@ -184,7 +184,7 @@ const markup = `<div class='team-modal'>
       <h2 class='team-modal__name'>Serhii Nechytailenko</h2>
       <p class='team-modal__quote'>“You're not funny, Valera.”</p>
       <a
-        href='https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BD%D0%B5%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE-0ab499215/'
+        href='https://www.linkedin.com/in/serhii-nechytailenko-0ab499215/'
         target='_blank' class='team-modal__soc-link link'
       ><svg class='team-modal__icon' width='35' height='35'>
           <use href='${svgUrl}#icon-linkedin'></use></svg></a>
