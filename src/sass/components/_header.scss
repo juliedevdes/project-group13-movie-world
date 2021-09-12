@@ -356,3 +356,40 @@ body {
 // .theme-switch__toggle:active + .theme-switch__track {
 //   box-shadow: 0 0 0 1px $accent-color;
 // }
+
+.auth__list {
+  justify-content: end;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.header-top__login {
+  cursor: pointer;
+  color: white;
+  outline-style: none;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.06px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  &:hover {
+    box-shadow: 0px 6px 5px -4px rgba(255, 107, 1, 0.6);
+  }
+}
+
+.user-name {
+  margin-left: auto;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 14.06px;
+  text-align: right;
+}
+
+.name-box {
+  margin-bottom: 8px;
+}
