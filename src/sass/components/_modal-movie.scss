@@ -75,12 +75,13 @@
   }
 
   &__btn-section {
-    display: flex;
-    justify-content: space-between;
+    display: block;
   }
 
   &-btn {
-    width: 112.58px;
+    // width: 112.58px;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -103,9 +104,23 @@
       width: 156px;
     }
 
+    &__btn-section {
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: space-between;
+    }
+
     &-btn {
       width: 125.03px;
     }
+  }
+
+  .btn-queue {
+    margin-left: 5px;
+  }
+
+  .trailer-btn {
+    width: 255.06px;
   }
 }
 
@@ -146,5 +161,9 @@
   .btn-queue {
     margin-left: 5px;
     margin-right: 5px;
+  }
+
+  .trailer-btn {
+    width: 277px;
   }
 }
