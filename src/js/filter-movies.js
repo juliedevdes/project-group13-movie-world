@@ -3,6 +3,7 @@ import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
+import renderGallery from './render-gallery';
 
 yearPickerMenu();
 
@@ -31,7 +32,7 @@ const spinner = new Spinner();
 
 filterInput.forEach(item => {
   item.addEventListener('change', event => {
-    api.fetchMovies();
+    // api.fetchMovies();
     inputRef.value = '';
     yearValue = yearPicker.value;
     genreValue = genrePicker.value;
@@ -46,8 +47,9 @@ filterInput.forEach(item => {
 // }
 function createCard(genre, year) {
   api.fetchMovies(genre, year).then(res => {
-    gallery.innerHTML = cardsMarkUp(res.results);
-  })
+    gallery.innerHTML = '';
+    cardsMarkUp(res.results);
+  });
 }
 
 function yearPickerMenu() {

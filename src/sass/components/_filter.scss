@@ -2,12 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  // padding: 20px;
   padding-bottom: 0;
 }
 
 .filter__container {
-  padding-bottom: 10px;
+  padding-top: 20px;
+  margin-bottom: -25px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: -95px;
+  }
 }
 
 .filter-input {
@@ -21,6 +25,9 @@
     border: 2px solid transparent;
     background: transparent;
     color: $black-color;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
