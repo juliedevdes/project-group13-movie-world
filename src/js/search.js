@@ -1,6 +1,6 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink, pagination } from './refs';
+import {modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink, pagination } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
@@ -126,4 +126,5 @@ export function backTooMain() {
   clearInput();
   resetPage();
   fetchTopMovies(page);
+  pagination.classList.remove('visually-hidden')
 }
