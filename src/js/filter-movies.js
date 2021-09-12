@@ -8,10 +8,30 @@ yearPickerMenu();
 
 let yearValue = '';
 let genreValue = '';
+const spinner = new Spinner();
+
+function movieFilter() {
+  // api.fetchMovies();
+  // incrementPage() {
+  //   this._page += 1;
+  // }
+  // resetPage() {
+  //   this._page = 1;
+  // }
+  // decrementPage() {
+  //   this._page -= 1;
+  // }
+  // get page() {
+  //   return this._page;
+  // }
+  // set page(value) {
+  //   this._page = value;
+  // }
+}
 
 filterInput.forEach(item => {
   item.addEventListener('change', event => {
-    api.fetchGenre().resetPage();
+    movieFilter().resetPage();
     inputRef.value = '';
     yearValue = yearPicker.value;
     genreValue = genrePicker.value;
@@ -20,9 +40,8 @@ filterInput.forEach(item => {
 });
 
 function createCard(genre, year) {
-  fetchMovies(genre, year).then(res => {
-    gallery.innerHTML = cardTpl(cardsMarkUp(cards));
-  });
+  movieFilter(genre, year);
+  gallery.innerHTML = cardTpl(cardsMarkUp(cards));
 }
 
 function yearPickerMenu() {
