@@ -47,7 +47,7 @@
   top: 20px;
   right: 45px;
   font-size: 60px;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
@@ -66,8 +66,8 @@
   height: 160px;
   margin-top: 40px;
   @media screen and(min-width: 768px) {
-    width: 640px;
-    height: 320px;
+    width: 600px;
+    height: 300px;
   }
   @media screen and (min-width: 1024px) {
     width: 860px;
@@ -81,4 +81,35 @@
 
 .embed.show {
   display: block;
+}
+
+.arrow {
+  position: absolute;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrow--left {
+  left: 10%;
+  top: 50%;
+  // transform: translate(-50%);
+}
+
+.arrow--right {
+  right: 10%;
+  top: 50%;
+  // transform: translate(-50%);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .arrow {
+    font-size: 60px;
+  }
+  .arrow--left {
+    left: 1%;
+  }
+  .arrow--right {
+    right: 1%;
+  }
 }

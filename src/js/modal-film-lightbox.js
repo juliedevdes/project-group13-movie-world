@@ -187,8 +187,12 @@ function onOpenModalFilm(event) {
 
   // handle one video parse:
   var activeVideo = 0;
+  var totalVideos = 0;
+
+  // handle rendering of videos:
   function showVideos() {
     let embedClasses = document.querySelectorAll('.embed');
+    totalVideos = embedClasses.length;
     embedClasses.forEach((embedTag, index) => {
       if (activeVideo === index) {
         embedTag.classList.add('show');
@@ -199,6 +203,31 @@ function onOpenModalFilm(event) {
       }
     });
   }
+
+  // refs for nav arrows:
+  const leftArrow = document.querySelector('.arrow--left');
+  const rightArrow = document.querySelector('.arrow--right');
+
+  // handle left arrow click:
+  leftArrow.addEventListener('click', () => {
+    if (activeVideo > 0) {
+      activeVideo--;
+    } else {
+      activeVideo = totalVideos - 1;
+    }
+
+    showVideos();
+  });
+  // handle right arrow click:
+  rightArrow.addEventListener('click', () => {
+    if (activeVideo < totalVideos - 1) {
+      activeVideo++;
+    } else {
+      activeVideo = 0;
+    }
+
+    showVideos();
+  });
 
   /* Close when someone clicks on the "x" symbol inside the overlay */
   function closeNav() {
