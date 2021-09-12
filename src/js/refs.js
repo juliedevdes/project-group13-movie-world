@@ -18,6 +18,9 @@ const queueBtn = document.querySelector('.libr-queue');
 const backgroundHome = document.querySelector('.page-header');
 const galleryRef = document.querySelector('.gallery__list');
 const loadMoreRef = document.querySelector('.load-more');
+const genrePicker = document.querySelector('.filter__input--genre');
+const yearPicker = document.querySelector('.filter__input--year');
+const filterInput = document.querySelectorAll('.filter-input');
 const pagination = document.querySelector('#tui-pagination-container');
 const regRef = document.getElementById('register');
 const authPostRef = document.getElementById('sign-in__post');
@@ -46,6 +49,9 @@ export {
   modalFilmOpen,
   modalTeamOpen,
   loadMoreRef,
+  genrePicker,
+  yearPicker,
+  filterInput,
   pagination,
   regRef,
   authPostRef,

@@ -203,6 +203,14 @@ function onOpenModalFilm(event) {
   /* Close when someone clicks on the "x" symbol inside the overlay */
   function closeNav() {
     document.getElementById('myNav').style.width = '0%';
+
+    // stop playing video on modal close
+    const iframes = document.getElementsByTagName('iframe');
+    if (iframes !== null) {
+      for (let i = 0; i < iframes.length; i++) {
+        iframes[i].src = iframes[i].src; //causes a reload so it stops playing, music, video, etc.
+      }
+    }
   }
 
   const closeOverlayIcon = document.querySelector('.closebtn');

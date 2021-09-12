@@ -14,8 +14,8 @@ import { gallery } from './refs'
       card.vote_average = ' ';
 
       if (card.genre_ids.length > 3) {
-          card.genre_ids = card.genre_ids.slice(0, 3)
-            card.genre_ids[3]= ' and other';
+          card.genre_ids = card.genre_ids.slice(0, 2)
+            card.genre_ids[2]= ' other';
         }
       card.genre_ids.forEach((genre, index) => {
         genres.forEach(genreCard => {
