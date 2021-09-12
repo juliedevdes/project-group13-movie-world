@@ -1,24 +1,9 @@
-{{!-- {{#each this}} --}}
-{{!-- <div class='card-movie-home modal-open'>
-    <img class='card-movie-home__img' src='{{backdrop_path}}' alt='{{original_title}}' />
-    <div class='card-movie-home__section'>
-      <h1 class='card-movie-home__title'>{{original_title}}</h1>
-      <div class='card-movie-home__desc'>
-        <ul>
-          <li class='card-movie-home__item'>{{genres}} | </li>
-          <li class='card-movie-home__item'>{{release_date}}</li>
-        </ul>
-      </div>
-    </div>
-  </div> --}}
-{{!-- {{/each}}   --}}
-
 {{#each this}}
   <li class='gallery__list__elem'>
     <div class='movie-card animate__animated animate__fadeInUp'>
       <img
         class='poster'
-        src='https://image.tmdb.org/t/p/w300/{{poster_path}}'
+        src='https://image.tmdb.org/t/p/w300{{poster_path}}'
         loading='lazy'
         alt=''
         data-id={{id}}
@@ -26,7 +11,7 @@
       />
       <div class='movie-details'>
         <p class='movie-name'>{{original_title}}</p>
-        <p class='movie-info'>{{genre_ids}} | {{release_date}}</p>
+        <p class='movie-info'>{{genre_ids}}{{genres}} | {{release_date}} &ensp; <span id="id-m" class='movie-id'>{{vote_average}}</span></p>
       </div>
     </div>
   </li>

@@ -7,19 +7,25 @@ import {
   watchedBtn,
   queueBtn,
   logoLink,
+  pagination,
 } from './refs';
 import { onQueueClick } from './queue/renderQueue';
+import isLibraryEmpty from './my-library-set-bg-pic';
+import { fetchTopMovies } from './startpage';
 
 function clickBtn() {
   activeBorderOn();
   addClassMyLibrary();
   onQueueClick();
   activeBtnQueue();
+    
 }
 
 function clickBtnHome() {
   activeBorderHome();
   addClassHome();
+  isLibraryEmpty();
+  
 }
 
 myLibraryBtn.addEventListener('click', clickBtn);
@@ -35,6 +41,7 @@ function addClassMyLibrary() {
 
   bntlibrary.classList.remove('visually-hidden');
   inpuForm.classList.add('visually-hidden');
+  pagination.classList.add('visually-hidden');
 }
 
 function activeBorderOn() {
@@ -51,6 +58,7 @@ function activeBtnQueue() {
   queueBtn.classList.remove('primary-white');
   watchedBtn.classList.remove('active-btn');
   queueBtn.classList.add('active-btn');
+  isLibraryEmpty();
 }
 
 function activeBtnWatched() {
@@ -59,6 +67,7 @@ function activeBtnWatched() {
   watchedBtn.classList.remove('accent');
   watchedBtn.classList.add('active-btn');
   queueBtn.classList.remove('active-btn');
+  isLibraryEmpty();
 }
 
 function addClassHome() {
@@ -68,6 +77,8 @@ function addClassHome() {
 
   bntlibrary.classList.add('visually-hidden');
   inpuForm.classList.remove('visually-hidden');
+  watchedBtn.classList.remove('active-btn');
+  queueBtn.classList.remove('active-btn');
 }
 
 function activeBorderHome() {

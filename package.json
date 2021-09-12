@@ -29,7 +29,9 @@
     "animate.css": "^4.1.1",
     "axios": "^0.21.1",
     "basiclightbox": "^5.0.4",
+    "firebase": "^9.0.2",
     "handlebars": "^4.7.7",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "tui-pagination": "^3.4.1"
   }
 }

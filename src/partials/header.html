@@ -22,7 +22,9 @@
       </svg>
     </div>
   </div>
+
   <div class="container header-container">
+    <div class="name-box"><p class="user-name"></p></div>
     <div class="header-top">
       <a class="logo header-top__link-logo link">
         <img
@@ -35,10 +37,13 @@
       <nav class="nav header-top__nav">
         <ul class="header-top__nav-list list">
           <li class="header-top__nav-item animate__animated animate__bounceIn">
-            <button class="header-top__nav-link is-active header-top__home" >HOME</button>
+            <button class="header-top__nav-link is-active header-top__home">HOME</button>
           </li>
           <li class="header-top__nav-item animate__animated animate__bounceIn">
-            <button class="header-top__nav-link shd header-top__my-library" data-choice="my-library">
+            <button
+              class="header-top__nav-link shd header-top__my-library"
+              data-choice="my-library"
+            >
               MY LIBRARY
             </button>
           </li>
@@ -65,6 +70,17 @@
         </li>
         <li class="btn-list__item">
           <button class="btn-list__header primary-white libr-queue">QUEUE</button>
+        </li>
+      </ul>
+    </div>
+    <div class="firebase__auth">
+      <p class="user__name"></p>
+      <ul class="header-top__nav-list list auth__list">
+        <li class="header-top__nav-item animate__animated animate__bounceIn">
+          <button class="header-top__login sign_in" id="sign-in__google">Sign in by Google</button>
+        </li>
+        <li class="header-top__nav-item animate__animated animate__bounceIn">
+          <button class="header-top__login sign_in" id="log-out">Sign out</button>
         </li>
       </ul>
     </div>

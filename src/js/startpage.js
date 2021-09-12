@@ -1,93 +1,55 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef, homeBtn, logoLink, loadMoreRef } from './refs';
+import { modalOpen, gallery, inputRef, homeBtn, logoLink } from './refs';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
-
-document.addEventListener('DOMContentLoaded', startPage);
-homeBtn.addEventListener('click', startPage);
-logoLink.addEventListener('click', startPage);
+import Pagination from 'tui-pagination';
+import fPagination from './pagination';
+import renderGallery from './render-gallery';
+import clickBtnHome from './my-library'
+import { backTooMain } from './search';
 
 const spinner = new Spinner();
 
-let currentPage = 1 ;
+// document.addEventListener('DOMContentLoaded', fetchTopMovies());
 
-async function startPage() {
+homeBtn.addEventListener('click',backTooMain );
+logoLink.addEventListener('click', backTooMain );
+
+let page = 1;
+
+export async function fetchTopMovies(page) {
   try {
-     const data = await api.PopularMovie(currentPage);
+    const res = await api.PopularMovie(page);
+    const movies = res.results;
+    const totalResult = res.total_results;
+    const totalHits = res.total_pages;
+    let currentPage = res.page;
 
-    const cards = data.results;
+    const instance = fPagination();
+    instance.setItemsPerPage(20);
+    instance.setTotalItems(totalResult);
+    instance.movePageTo(currentPage);
+
+    instance.on('afterMove', event => {
+      currentPage = event.page;
+      clearInput();
+      fetchTopMovies(currentPage);
+    });
     spinner.showSpinner();
-    if (cards !== []) {
+    if (totalResult !== []) {
       spinner.hideSpinner();
     }
-    clearInput();
-    cardsMarkUp(cards);
-   
-  //  observer.observe(loadMoreRef)
-  
-   
-  } catch (error) {}
+    cardsMarkUp(movies);
+  } catch (error) {
+    console.log(error);
+  }
 }
-// export function cardsMarkUp(cards) {
-//   // Запрос списка жанров
-//   api.fetchGenre().then(genres => {
-//     cards.forEach((card, i) => {
-//       card.release_date = card.release_date.substring(0, 4);
 
-//       if (card.genre_ids.length > 3) {
-//         card.genre_ids = card.genre_ids.slice(0, 3);
-//       }
-
-//       card.genre_ids.forEach((genre, index) => {
-//         genres.forEach(genrCard => {
-//           if (genrCard.id === genre) card.genre_ids[index] = ' ' + genrCard.name;
-//         });
-//       });
-//     });
-
-//     gallery.insertAdjacentHTML('beforeend', cardTpl(cards));
-
-//     currentMovies.movies = cards;
-//   });
-// }
-
-// const currentMovies = {
-//   movies: [],
-// };
-// function createCard(movies) {
-//   gallery.insertAdjacentHTML('beforeend', cardTpl(movies));
-// }
+fetchTopMovies(page);
 
 function clearInput() {
-  gallery.innerHTML = '';
+  if (gallery.hasChildNodes() === true) {
+    gallery.innerHTML = '';
+  }
 }
-
-
-// intersectionObserver for infinite scroll:
-// export  function  onEntry( entries )  {
-//   entries.forEach(entry => {
- 
-//     if (entry.isIntersecting) {
-     
-//         api.PopularMovie(currentPage).then(cards => {
-//         if (cards.length < 1) {
-//           window.alert('No images to display 😢');
-//           observer.unobserve(loadMoreRef);
-//           return;
-//         }
-    
-//         if(cards.page >= 1 ) 
-//           cards.page = currentPage++;
-       
-//         const moviesToRender = cards.results;
-//         // gallery.insertAdjacentHTML('beforeend', cardTpl(moviesToRender));
-//         cardsMarkUp(moviesToRender)
-//       });
-//      }
-//   });
-// };
-
-// const observer = new IntersectionObserver(onEntry, {
-//   rootMargin: '200px',
-// });

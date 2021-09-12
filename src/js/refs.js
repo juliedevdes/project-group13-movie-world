@@ -21,6 +21,12 @@ const loadMoreRef = document.querySelector('.load-more');
 const genrePicker = document.querySelector('.filter__input--genre');
 const yearPicker = document.querySelector('.filter__input--year');
 const filterInput = document.querySelectorAll('.filter-input');
+const pagination = document.querySelector('#tui-pagination-container');
+const regRef = document.getElementById('register');
+const authPostRef = document.getElementById('sign-in__post');
+const authGoogleRef = document.getElementById('sign-in__google');
+const logOut = document.getElementById('log-out');
+const name = document.querySelector('.user-name');
 
 export {
   modalOpen,
@@ -46,4 +52,10 @@ export {
   genrePicker,
   yearPicker,
   filterInput,
+  pagination,
+  regRef,
+  authPostRef,
+  authGoogleRef,
+  logOut,
+  name,
 };

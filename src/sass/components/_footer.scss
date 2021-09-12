@@ -1,36 +1,3 @@
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.page-footer {
-  height: 65px;
-  width: 100%;
-  position: fixed;
-  bottom: 0%;
-}
-.page-footer.light-theme {
-  background-color: $footer-bg-color;
-  color: #000;
-}
-
-.page-footer.dark-theme {
-  background-color: #292929;
-  color: #fff;
-  & .footer__text {
-    color: #baaeae;
-  }
-  & .footer__btn {
-    color: $footer-bg-color;
-    &:hover,
-    &:focus {
-      color: $accent-color;
-      cursor: pointer;
-    }
-  }
-}
-
 /*====heart icon and it's animation====*/
 @keyframes beat {
   to {
@@ -46,50 +13,84 @@
 }
 /*====heart end=====*/
 
-.footer__btn {
-  color: $footer-text-color;
-  border: none;
-  background-color: unset;
-  text-decoration: underline;
-  transition: color 250ms linear;
-  &:hover,
-  &:focus {
-    color: $accent-color;
-    cursor: pointer;
+/*====themes here *:･ﾟ☆ */
+.page-footer {
+  height: fit-content;
+  width: 100%;
+  &.light-theme {
+    background-color: $footer-bg-color;
+    color: #000;
+  }
+  &.dark-theme {
+    background-color: #292929;
+    color: #fff;
+    &.footer-btn {
+      color: $white-color;
+    }
+    & .footer__text {
+      color: #baaeae;
+    }
+    & .footer__btn {
+      color: $footer-bg-color;
+      &:hover,
+      &:focus {
+        color: $accent-color;
+        cursor: pointer;
+      }
+    }
   }
 }
 
-.page-footer.dark-theme.footer-btn {
-  color: $white-color;
-}
-
-.footer__text {
-  color: $footer-text-color;
-  text-align: left;
-  line-height: 28px;
-  font-size: 14px;
-}
-.footer__text--down {
-  display: block;
+.footer {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+  &__btn {
+    color: $footer-text-color;
+    border: none;
+    background-color: unset;
+    text-decoration: underline;
+    transition: color 250ms linear;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      cursor: pointer;
+    }
+  }
+  &__text {
+    color: $footer-text-color;
+    text-align: left;
+    font-size: 14px;
+  }
+  &__text--down {
+    display: block;
+    margin-top: 10px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .footer-container {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  .footer {
+    &-container {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    &__text {
+      text-align: center;
+
+      line-height: 14px;
+      font-size: 16px;
+      max-width: unset;
+    }
+    &__text--down {
+      display: unset;
+    }
   }
+
   .page-footer {
     height: 50px;
-  }
-  .footer__text {
-    text-align: center;
-
-    line-height: 14px;
-    font-size: 16px;
-    max-width: unset;
-  }
-  .footer__text--down {
-    display: unset;
   }
 }
 
@@ -117,6 +118,7 @@
     opacity: 1;
   }
 }
+
 @media screen and (min-width: 525px) {
   .footer__text {
     text-align: center;
