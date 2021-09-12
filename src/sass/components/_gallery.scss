@@ -39,6 +39,17 @@ body.dark-theme .gallery__list__elem {
   margin-top: 10px;
 }
 
+.movie-id {
+  visibility: hidden;
+  display: inline-flex;
+  justify-content: center;
+  color: aliceblue;
+  text-align: center;
+  width: 36px;
+  height: 16px;
+  background: #ff6b01;
+  border-radius: 5px;
+}
 .movie-info {
   font-size: 12px;
   line-height: 16px;
