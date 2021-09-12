@@ -1,29 +1,63 @@
-.tui-pagination .tui-first,
-.tui-pagination .tui-prev,
-.tui-pagination .tui-next,
-.tui-pagination .tui-last,
-.tui-pagination .tui-prev-is-ellip,
-.tui-pagination .tui-next-is-ellip {
-  height: 30px;
+.tui-pagination {
+  margin-top: 40px;
+}
+
+.tui-pagination .tui-page-btn {
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  width: 26px;
+  font-size: 12px;
+
+  @media screen and (min-width: 767px) {
+    width: 40px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+    height: 38px;
+  }
+}
+
+.tui-pagination .tui-page-btn:hover {
+  background-color: transparent;
+  border: 1px solid #ff6b08;
+  border-radius: 0.5rem;
 }
 
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
   color: #fff;
-  background: orange;
-  border-color: orange;
+  background: #ff6b08;
+  border-color: transparent;
+  border-radius: 0.5rem;
 }
+
 .tui-pagination .tui-is-selected:hover {
-  background-color: orange;
+  background-color: #ff6b08;
+  border-radius: 0.5rem;
 }
 
 .dark-theme {
   .tui-pagination .tui-page-btn {
-    color: white;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
   }
+
   .tui-pagination .tui-page-btn:hover {
-    background-color: gray;
+    background-color: transparent;
+    border: 1px solid #ff6b08;
+    border-radius: 0.5rem;
   }
+
+  .tui-pagination .tui-is-selected:hover {
+    background-color: #ff6b08;
+    border-radius: 0.5rem;
+  }
+
   .tui-pagination .tui-ico-first,
   .tui-pagination .tui-ico-prev,
   .tui-pagination .tui-ico-next,
@@ -32,14 +66,17 @@
     filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(198deg) brightness(126%)
       contrast(112%);
   }
+  height: 60px;
 }
 
-.tui-pagination .tui-first-child.tui-is-selected {
-  border-left: 1px solid orange;
+.tui-pagination .tui-first-child .tui-is-selected {
+  border-left: 1px solid #ff6b08;
+  border-radius: 0.5rem;
 }
 
-.tui-pagination .tui-last-child.tui-is-selected {
-  border-right: 1px solid orange;
+.tui-pagination .tui-last-child .tui-is-selected {
+  border-right: 1px solid #ff6b08;
+  border-radius: 0.5rem;
 }
 
 .hidden {
