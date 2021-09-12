@@ -34,7 +34,6 @@ export default {
       const { data } = await axios.get(`${ID_URL}${id}?api_key=${API_KEY}`);
       const result = { ...data };
       return result;
-      
     } catch (error) {
       console.error('Error with Api ID' + error);
     }
@@ -49,6 +48,12 @@ export default {
       })
       .catch(error => console.log(error));
   },
+
+  fetchMovies(genre, year) {
+    return fetch(`${POPULAR_URL}?api_key=${API_KEY}&page=${page}`)
+      .then(r => (r.ok ? r.json() : []))
+      .catch(error => console.log(error));
+  },
   get query() {
     return searchQuery;
   },
@@ -61,7 +66,6 @@ export default {
    setPage(pageNumber) {
     page = pageNumber;
   }
-
 
 };
 
