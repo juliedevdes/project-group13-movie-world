@@ -2,45 +2,6 @@
 
 💫 Web application dedicated to movies and surfing them to find something just right for you 💫
 
----
-
-## What it can do ————-««
-
-- search by your request and browse movies shaped into beautiful cards
-- switch to next group of films by simple pagination
-- give you more info about movie in a modal window (rating, genre, year)
-- play a trailer
-- show what's popular now by default on the home page
-- save movies to your library, into "watched" or "queque" tab to find it later, whenever you want
-- change color theme for your eye comfort and save it next times you'll visit
-- instantly get you on top of the page by special button
-- sign up with your Google account
-- meet our marvelous team by hitting link in the footer ✨
-
----
-
-## Techology we've used ————-««
-
-- [Design base:](https://www.figma.com/file/lA5plQSUEbIKOSJHfuPpXO/Filmoteka?node-id=0%3A1)
-- [API "The movie database":](https://www.themoviedb.org/)
-- _Bundler_: Parcel
-- _JavaScript runtime environment:_ Node.js 7.20.6
-- _Libraries:_
-- **basicLightBox**
-  - for our modal windows
-- **tui pagination**
-  - create pagination for home and library pages
-- **axios**
-  - simplify interaction with API
-- **lodash debounce**
-  - for our modal windows
-- **firebase**
-  - authentification
-- **handlebars**
-  - templating our HTML for dynamic data
-
----
-
 ## How it was made ————-««
 
 It's eight-people project we were developing two weeks (from 2021 September 1th to 15th) together as
@@ -52,7 +13,40 @@ We were given some
 
 P.S. but we gone far in adding more features 💨
 
----
+## What kinds of features does it have ————-««
+
+- search by your request and browse movies shaped into beautiful cards
+- switch to next group of films by simple pagination
+- give you more info about movie in a modal window (rating, genre, year)
+- play a trailer
+- show what's popular now by default on the home page
+- save movies to your library, into "watched" or "queque" tab to find it later, whenever you want
+- change color theme for your eye comfort and save it next times you'll visit
+- instantly get you on top of the page by special button
+- sign in with your Google account
+- meet our marvelous team by hitting link in the footer ✨
+
+## Techology we've used ————-««
+
+- [Design base](https://www.figma.com/file/lA5plQSUEbIKOSJHfuPpXO/Filmoteka?node-id=0%3A1)
+- [API "The movie database"](https://www.themoviedb.org/)
+- Bundler: Parcel
+- JavaScript runtime environment: Node.js 7.20.6
+
+Libraries:
+
+- **basicLightBox**
+  - for our modal windows
+- **tui pagination**
+  - create pagination for home and library pages
+- **axios**
+  - simplify interaction with API
+- **lodash debounce**
+  - for our modal windows
+- **firebase**
+  - authorization
+- **handlebars**
+  - templating our HTML for dynamic data
 
 ## How we managed teamwork process ————-««
 
@@ -65,8 +59,6 @@ project. So, in order to maintain development process we implemented:
   - as a task tracking tool and product backlog with our goals and due dates
 - daily stand-up meetings
   - to keep in touch with everybody, discuss controversial topic and help each other when it needed
-
----
 
 ## How to reach us ————-««
 
