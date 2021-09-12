@@ -7,21 +7,25 @@ import {
   watchedBtn,
   queueBtn,
   logoLink,
+  pagination,
 } from './refs';
 import { onQueueClick } from './queue/renderQueue';
 import isLibraryEmpty from './my-library-set-bg-pic';
+import { fetchTopMovies } from './startpage';
 
 function clickBtn() {
   activeBorderOn();
   addClassMyLibrary();
   onQueueClick();
   activeBtnQueue();
+    
 }
 
 function clickBtnHome() {
   activeBorderHome();
   addClassHome();
   isLibraryEmpty();
+  
 }
 
 myLibraryBtn.addEventListener('click', clickBtn);
@@ -37,6 +41,7 @@ function addClassMyLibrary() {
 
   bntlibrary.classList.remove('visually-hidden');
   inpuForm.classList.add('visually-hidden');
+  pagination.classList.add('visually-hidden');
 }
 
 function activeBorderOn() {

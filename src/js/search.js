@@ -1,6 +1,6 @@
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink, pagination } from './refs';
+import {modalOpen, gallery, inputRef, successRef, noSuccessRef, homeBtn, logoLink, pagination } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
@@ -17,8 +17,8 @@ let arr = [];
 // const pagination = new Pagination('#tui-pagination-container', options);
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
-// homeBtn.addEventListener('click', );
-// logoLink.addEventListener('click',);
+homeBtn.addEventListener('click', backTooMain);
+logoLink.addEventListener('click',backTooMain);
 
 const spinner = new Spinner();
 export function searchMovie(e) {
@@ -122,4 +122,9 @@ function clearSearch() {
  
   resetPage();
 }
-
+export function backTooMain() {
+  clearInput();
+  resetPage();
+  fetchTopMovies(page);
+  pagination.classList.remove('visually-hidden')
+}
