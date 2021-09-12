@@ -1,4 +1,4 @@
-# »»—— MOVIE-WORLD TEAM PROJECT ——««
+# »»—— MOVIE-WORLD ——««
 
 💫 Web application dedicated to movies and surfing them to find something just right for you 💫
 
