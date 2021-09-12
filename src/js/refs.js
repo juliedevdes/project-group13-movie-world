@@ -19,6 +19,11 @@ const backgroundHome = document.querySelector('.page-header');
 const galleryRef = document.querySelector('.gallery__list');
 const loadMoreRef = document.querySelector('.load-more');
 const pagination = document.querySelector('#tui-pagination-container');
+const regRef = document.getElementById('register');
+const authPostRef = document.getElementById('sign-in__post');
+const authGoogleRef = document.getElementById('sign-in__google');
+const logOut = document.getElementById('log-out');
+const name = document.querySelector('.user-name');
 
 export {
   modalOpen,
@@ -41,5 +46,10 @@ export {
   modalFilmOpen,
   modalTeamOpen,
   loadMoreRef,
-  pagination
+  pagination,
+  regRef,
+  authPostRef,
+  authGoogleRef,
+  logOut,
+  name,
 };
