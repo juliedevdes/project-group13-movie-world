@@ -7,9 +7,9 @@ import '../sass/components/_pagination.scss'
 const options = {
   totalItems: 1000,
   itemsPerPage: 10,
-  visiblePages: 10,
+  visiblePages: 4,
   page: 5,
-  centerAlign: false,
+  centerAlign: true,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
   template: {
@@ -39,7 +39,6 @@ const fPagination = () => {
 };
 
 export default fPagination;
-
 
 
 
