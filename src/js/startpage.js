@@ -5,12 +5,16 @@ import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
 import Pagination from 'tui-pagination';
 import fPagination from './pagination';
+import renderGallery from './render-gallery';
+import clickBtnHome from './my-library'
+import { backTooMain } from './search';
 
 const spinner = new Spinner();
 
-// document.addEventListener('DOMContentLoaded', startPage);
-// homeBtn.addEventListener('click', startPage);
-// logoLink.addEventListener('click', startPage);
+// document.addEventListener('DOMContentLoaded', fetchTopMovies());
+
+homeBtn.addEventListener('click',backTooMain );
+logoLink.addEventListener('click', backTooMain );
 
 let page = 1;
 
