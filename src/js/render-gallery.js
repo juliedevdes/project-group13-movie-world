@@ -12,7 +12,6 @@ export default function renderGallery(movies) {
         card.genres = card.genres.split(',');
         if (card.genres.length > 3) {
           card.genres = card.genres.slice(0, 2) + ', other';
-          console.log(card.genres);
         }
       });
       gallery.insertAdjacentHTML('beforeend', cardTpl(movies));

@@ -140,7 +140,9 @@ function onOpenModalFilm(event) {
         renderGallery(queueMovies);
       }
     }
+
     // ============ getting id for trailer search ==========
+
     const trailerBtn = document.querySelector('.trailer-btn');
     trailerBtn.addEventListener('click', showTrailer);
     function showTrailer() {
@@ -149,7 +151,7 @@ function onOpenModalFilm(event) {
     }
   });
 
-  /* Open when someone clicks on the span element */
+  // Open overlay when someone clicks on the movie card trailer btn:
   function openNav() {
     api.MovieSearchId(currentId).then(response => {
       let movieId = response.id;
@@ -159,9 +161,7 @@ function onOpenModalFilm(event) {
       )
         .then(response => response.json())
         .then(videoData => {
-          console.log(videoData);
           const videoArr = videoData.results;
-          console.log(videoArr);
           if (videoArr) {
             document.getElementById('myNav').style.width = '100%';
             if (videoArr.length > 0) {
@@ -229,7 +229,7 @@ function onOpenModalFilm(event) {
     showVideos();
   });
 
-  /* Close when someone clicks on the "x" symbol inside the overlay */
+  // Close when someone clicks on the "x" symbol inside the overlay
   function closeNav() {
     document.getElementById('myNav').style.width = '0%';
 

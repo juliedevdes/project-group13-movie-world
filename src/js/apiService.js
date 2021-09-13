@@ -5,7 +5,6 @@ const POPULAR_URL = `${BASE_URL}/trending/movie/day`;
 const SEARCH_URL = `${BASE_URL}/search/movie`;
 const ID_URL = `${BASE_URL}/movie/`;
 
-
 export default {
   // Получение информации о популярных фильмах
   async PopularMovie(page) {
@@ -39,7 +38,7 @@ export default {
       console.error('Error with Api ID' + error);
     }
   },
-  // //Поиск по жанрам (для модалки выводит инфо конкретного фильма)
+  // Поиск по жанрам (для модалки выводит инфо конкретного фильма)
 
   fetchGenre() {
     return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
@@ -57,27 +56,24 @@ export default {
       .catch(error => console.log(error));
   },
 
-
-
   // fetchMovies(genre, year) {
   //   return fetch(`${POPULAR_URL}?api_key=${API_KEY}&page=${page}`)
   //     .then(r => (r.ok ? r.json() : []))
   //     .catch(error => console.log(error));
   // },
- increment() {
-    this.page +=1;
+  increment() {
+    this.page += 1;
   },
   get query() {
     return searchQuery;
   },
-   resetPage() {
+  resetPage() {
     page = 1;
   },
-   set query(newQuery) {
-  searchQuery = newQuery;
+  set query(newQuery) {
+    searchQuery = newQuery;
   },
-   setPage(pageNumber) {
+  setPage(pageNumber) {
     page = pageNumber;
-  }
-
+  },
 };

@@ -40,8 +40,6 @@ function createCard(genre, year) {
   api.fetchMovies(genre, year).then(res => {
     gallery.innerHTML = '';
 
-   
-  
     const currentPage = res.page;
     const totalResult = res.total_results;
     const instance = fPagination();
@@ -54,9 +52,8 @@ function createCard(genre, year) {
       onMore(genre, currentPage);
       clearInput();
       api.increment();
-     
     });
-    cardsMarkUp(res.results,currentPage);
+    cardsMarkUp(res.results, currentPage);
   });
 }
 async function onMore(genre, currentPage) {
@@ -86,6 +83,7 @@ function clearInput() {
   if (gallery.hasChildNodes() === true) {
     gallery.innerHTML = '';
   }
+}
 
 //to clear genres select ► import yearPicker, genrePicker from refs to make it work
 export default function clearFilter() {

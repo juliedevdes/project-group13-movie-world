@@ -2,9 +2,6 @@ import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
 import { gallery } from './refs';
 
-// const currentMovies = {
-//   movies: [],
-// };
 export function cardsMarkUp(movie) {
   api.fetchGenre().then(genres => {
     movie.map((card, i) => {
@@ -23,7 +20,5 @@ export function cardsMarkUp(movie) {
     });
 
     gallery.insertAdjacentHTML('beforeend', cardTpl(movie));
-
-    // currentMovies.movies = cards;
   });
 }

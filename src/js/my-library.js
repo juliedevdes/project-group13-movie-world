@@ -18,14 +18,12 @@ function clickBtn() {
   addClassMyLibrary();
   onQueueClick();
   activeBtnQueue();
-    
 }
 
 function clickBtnHome() {
   activeBorderHome();
   addClassHome();
   isLibraryEmpty();
-  
 }
 
 myLibraryBtn.addEventListener('click', clickBtn);
@@ -45,7 +43,7 @@ function addClassMyLibrary() {
 }
 
 function activeBorderOn() {
-  //   добавляет/убирает подчеркивание на HOME и MY LIBRERY
+  //   добавляет/убирает подчеркивание на HOME и MY LIBRARY
   homeBtn.classList.remove('is-active');
   homeBtn.classList.add('shd');
   myLibraryBtn.classList.remove('shd');
@@ -53,7 +51,7 @@ function activeBorderOn() {
 }
 
 function activeBtnQueue() {
-  //добавляет/убирает классы для кнопок в MY LIBRERY
+  //добавляет/убирает классы для кнопок в MY LIBRARY
   watchedBtn.classList.add('accent');
   queueBtn.classList.remove('primary-white');
   watchedBtn.classList.remove('active-btn');
@@ -82,7 +80,7 @@ function addClassHome() {
 }
 
 function activeBorderHome() {
-  //   добавляет/убирает подчеркивание на HOME и MY LIBRERY
+  //   добавляет/убирает подчеркивание на HOME и MY LIBRARY
   homeBtn.classList.add('is-active');
   myLibraryBtn.classList.remove('is-active');
   myLibraryBtn.classList.add('shd');
