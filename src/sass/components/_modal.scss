@@ -5,17 +5,14 @@
 
   @media screen and (max-width: 767px) {
     width: 280px;
-    // height: 958px;
   }
 
   @media screen and (min-width: 768px) {
     width: 618px;
-    // height: 562px;
   }
 
   @media screen and (min-width: 1024px) {
     width: 882px;
-    // height: 568px;
   }
 }
 
@@ -52,4 +49,34 @@
 
 .basicLightbox--visible {
   overflow: scroll;
+}
+
+body.dark-theme .modal {
+  background-color: #333333;
+  color: $white-color;
+}
+
+body.dark-theme .card-movie__section {
+  color: $white-color;
+}
+
+body.dark-theme .card-movie-btn {
+  color: $white-color;
+  border: 1px solid $white-color;
+}
+
+body.dark-theme .modal__close-btn {
+  background-color: #333333;
+}
+
+body.dark-theme .team-modal {
+  background-color: #333333;
+}
+
+body.dark-theme .team-modal__title {
+  color: $white-color;
+}
+
+body.dark-theme .team-modal__name {
+  color: $white-color;
 }
