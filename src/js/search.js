@@ -45,7 +45,7 @@ export function searchMovie(e) {
           fPagination().reset();
         } else {
           spinner.showSpinner();
-          successRef.textContent = `Сongratulations!!! We found ${res.total_results} results of request "${movie}" `;
+          successRef.textContent = `We found ${res.total_results} results of request "${movie}" `;
           setTimeout(function () {
             spinner.hideSpinner();
             successRef.textContent = '';
