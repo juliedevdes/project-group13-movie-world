@@ -61,6 +61,22 @@ project. So, in order to maintain development process we implemented:
 - daily stand-up meetings
   - to keep in touch with everybody, discuss controversial topic and help each other when it needed
 
+## How to run this localy ————-««
+
+Install all dependencies once per project
+
+```
+npm ci
+```
+
+Start development mode
+
+```
+npm run dev
+```
+
+In the browser tab, go to the address http: // localhost: 1234.
+
 ## How to reach us ————-««
 
 Here are names of contributors and links to their LinkedIn profiles:
