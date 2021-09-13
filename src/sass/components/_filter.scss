@@ -2,32 +2,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 20px;
   padding-bottom: 0;
-}
-
-.filter__container {
-  padding-top: 20px;
-  margin-bottom: -15px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: -75px;
+  &__container {
+    padding-top: 20px;
+    margin-bottom: -15px;
   }
-}
-
-.filter-input {
-  border: 2px solid $accent-color;
-  border-radius: 5px;
-  background-color: transparent;
-  color: $black-color;
-  text-transform: uppercase;
-
-  &:hover {
-    border: 2px solid transparent;
-    background: transparent;
+  &-input {
+    border: 2px solid $accent-color;
+    border-radius: 5px;
+    background-color: transparent;
     color: $black-color;
+    text-transform: uppercase;
+
+    &:hover {
+      border: 2px solid transparent;
+      background: transparent;
+      color: $black-color;
+    }
+    &:focus {
+      outline: none;
+    }
   }
-  &:focus {
-    outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .filter__container {
+    margin-bottom: -75px;
   }
 }
 
@@ -79,7 +79,6 @@
     padding: 8px 10px;
     width: 144px;
     font-size: 13px;
-
     &:hover {
       transform: scale(1.03) translateY(-4px);
       transition: all $transition-duration $transition-function;

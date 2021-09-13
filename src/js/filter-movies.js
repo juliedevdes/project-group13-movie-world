@@ -1,4 +1,14 @@
-import { gallery, inputRef, yearPicker, genrePicker, filterInput } from './refs';
+import {
+  homeBtn,
+  logoLink,
+  myLibraryBtn,
+  gallery,
+  inputRef,
+  yearPicker,
+  genrePicker,
+  filterInput,
+  filterSection,
+} from './refs';
 import api from './apiService';
 import cardTpl from '../templates/card-movie-home.hbs';
 import Spinner from './spinner';
@@ -10,6 +20,10 @@ yearPickerMenu();
 let yearValue = '';
 let genreValue = '';
 const spinner = new Spinner();
+
+myLibraryBtn.addEventListener('click', closeFilter);
+homeBtn.addEventListener('click', openFilter);
+logoLink.addEventListener('click', openFilter);
 
 // function movieFilter() {
 //   // api.fetchMovies();
@@ -52,6 +66,7 @@ function createCard(genre, year) {
   });
 }
 
+// adds release years of films to select for filtering
 function yearPickerMenu() {
   let startYear = 1900;
   let endYear = new Date().getFullYear();
@@ -67,4 +82,14 @@ function yearPickerMenu() {
 export default function clearFilter() {
   yearPicker.value = '';
   genrePicker.value = '';
+}
+
+//removes the filter from the page layout
+function closeFilter() {
+  filterSection.classList.add('visually-hidden');
+}
+
+//add a filter from the page markup
+function openFilter() {
+  filterSection.classList.remove('visually-hidden');
 }

@@ -27,6 +27,7 @@ const authPostRef = document.getElementById('sign-in__post');
 const authGoogleRef = document.getElementById('sign-in__google');
 const logOut = document.getElementById('log-out');
 const name = document.querySelector('.user-name');
+const filterSection = document.querySelector('.filter__container');
 
 export {
   modalOpen,
@@ -58,4 +59,5 @@ export {
   authGoogleRef,
   logOut,
   name,
+  filterSection,
 };
