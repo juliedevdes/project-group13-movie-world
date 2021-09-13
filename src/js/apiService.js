@@ -5,6 +5,7 @@ const POPULAR_URL = `${BASE_URL}/trending/movie/day`;
 const SEARCH_URL = `${BASE_URL}/search/movie`;
 const ID_URL = `${BASE_URL}/movie/`;
 
+
 export default {
   // Получение информации о популярных фильмах
   async PopularMovie(page) {
@@ -49,7 +50,8 @@ export default {
       .catch(error => console.log(error));
   },
   fetchMovies(genre, year) {
-    const url = `${BASE_URL}/discover/movie?with_genres=${genre}&primary_release_year=${year}&sort_by=popularity.desc&api_key=${API_KEY}&page=${this._page}`;
+    this.page = 1;
+    const url = `${BASE_URL}/discover/movie?with_genres=${genre}&primary_release_year=${year}&sort_by=popularity.desc&api_key=${API_KEY}&page=${this.page}`;
     return fetch(url)
       .then(res => (res.ok ? res.json() : []))
       .catch(error => console.log(error));
@@ -62,6 +64,9 @@ export default {
   //     .then(r => (r.ok ? r.json() : []))
   //     .catch(error => console.log(error));
   // },
+ increment() {
+    this.page +=1;
+  },
   get query() {
     return searchQuery;
   },

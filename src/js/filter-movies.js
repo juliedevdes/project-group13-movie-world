@@ -14,6 +14,7 @@ import cardTpl from '../templates/card-movie-home.hbs';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
 import renderGallery from './render-gallery';
+import fPagination from './pagination';
 
 yearPickerMenu();
 
@@ -25,45 +26,49 @@ myLibraryBtn.addEventListener('click', closeFilter);
 homeBtn.addEventListener('click', openFilter);
 logoLink.addEventListener('click', openFilter);
 
-// function movieFilter() {
-//   // api.fetchMovies();
-//   // incrementPage() {
-//   //   this._page += 1;
-//   // }
-//   // resetPage() {
-//   //   this._page = 1;
-//   // }
-//   // decrementPage() {
-//   //   this._page -= 1;
-//   // }
-//   // get page() {
-//   //   return this._page;
-//   // }
-//   // set page(value) {
-//   //   this._page = value;
-//   // }
-// }
-
 filterInput.forEach(item => {
   item.addEventListener('change', event => {
-    // api.fetchMovies();
     inputRef.value = '';
     yearValue = yearPicker.value;
     genreValue = genrePicker.value;
+
     createCard(genreValue, yearValue);
   });
 });
 
-// function createCard(genre, year) {
-//   api.fetchMovies(genre, year);
-//   const movies = res.results;
-//   cardsMarkUp();
-// }
 function createCard(genre, year) {
   api.fetchMovies(genre, year).then(res => {
     gallery.innerHTML = '';
-    cardsMarkUp(res.results);
+
+   
+  
+    const currentPage = res.page;
+    const totalResult = res.total_results;
+    const instance = fPagination();
+    instance.setItemsPerPage(20);
+
+    instance.setTotalItems(totalResult);
+    instance.movePageTo(currentPage);
+    instance.on('afterMove', event => {
+      const currentPage = event.page;
+      onMore(genre, currentPage);
+      clearInput();
+      api.increment();
+     
+    });
+    cardsMarkUp(res.results,currentPage);
   });
+}
+async function onMore(genre, currentPage) {
+  try {
+    const cards = await api.fetchMovies(genre, currentPage);
+    const data = cards.results;
+    clearInput();
+
+    cardsMarkUp(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // adds release years of films to select for filtering
@@ -77,6 +82,10 @@ function yearPickerMenu() {
   }
   yearPicker.insertAdjacentHTML('beforeend', years);
 }
+function clearInput() {
+  if (gallery.hasChildNodes() === true) {
+    gallery.innerHTML = '';
+  }
 
 //to clear genres select ► import yearPicker, genrePicker from refs to make it work
 export default function clearFilter() {

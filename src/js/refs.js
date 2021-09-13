@@ -28,6 +28,7 @@ const authGoogleRef = document.getElementById('sign-in__google');
 const logOut = document.getElementById('log-out');
 const name = document.querySelector('.user-name');
 const filterSection = document.querySelector('.filter__container');
+const userPic = document.querySelector('.user-pic');
 
 export {
   modalOpen,
@@ -60,4 +61,5 @@ export {
   logOut,
   name,
   filterSection,
+  userPic,
 };

@@ -1,5 +1,16 @@
 <header class="page-header">
   <div class="toolbar">
+    <div class="firebase__auth">
+      <p class="user__name"></p>
+      <ul class="header-top__nav-list list auth__list">
+        <li class="auth-btns animate__animated animate__bounceIn">
+          <button class="header-top__login sign_in" id="sign-in__google">Sign in</button>
+        </li>
+        <li class="auth-btns animate__animated animate__bounceIn">
+          <button class="header-top__login sign_in" id="log-out">Sign out</button>
+        </li>
+      </ul>
+    </div>
     <div class="theme-switch animate__animated animate__backInDown">
       <svg class="theme-switch__icon" role="img" aria-label="Sun icon">
         <use href="./images/sprite.svg#sun"></use>
@@ -24,7 +35,10 @@
   </div>
 
   <div class="container header-container">
-    <div class="name-box"><p class="user-name"></p></div>
+    <div class="name-box">
+      <p class="user-name"></p>
+      <div class="user-pic"></div>
+    </div>
     <div class="header-top">
       <a class="logo header-top__link-logo link">
         <img
@@ -70,17 +84,6 @@
         </li>
         <li class="btn-list__item">
           <button class="btn-list__header primary-white libr-queue">QUEUE</button>
-        </li>
-      </ul>
-    </div>
-    <div class="firebase__auth">
-      <p class="user__name"></p>
-      <ul class="header-top__nav-list list auth__list">
-        <li class="header-top__nav-item animate__animated animate__bounceIn">
-          <button class="header-top__login sign_in" id="sign-in__google">Sign in by Google</button>
-        </li>
-        <li class="header-top__nav-item animate__animated animate__bounceIn">
-          <button class="header-top__login sign_in" id="log-out">Sign out</button>
         </li>
       </ul>
     </div>

@@ -24,12 +24,11 @@ import clearFilter from './filter-movies';
 let page = 1;
 let arr = [];
 
-// function clearFilterFunc() {
-//   let yearValue = '';
-//   let genreValue = '';
-// }
 
-// const pagination = new Pagination('#tui-pagination-container', options);
+
+
+
+
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
 homeBtn.addEventListener('click', backTooMain);
@@ -38,7 +37,6 @@ logoLink.addEventListener('click', backTooMain);
 const spinner = new Spinner();
 export function searchMovie(e) {
   e.preventDefault();
-  // clearFilterFunc();
   const movie = e.target.value;
   resetPage();
   if (movie.length > 1) {
@@ -51,7 +49,7 @@ export function searchMovie(e) {
           fPagination().reset();
         } else {
           spinner.showSpinner();
-          successRef.textContent = `Сongratulations!!! We found ${res.total_results} results of request "${movie}" `;
+          successRef.textContent = `We found ${res.total_results} results of request "${movie}" `;
           setTimeout(function () {
             spinner.hideSpinner();
             successRef.textContent = '';
@@ -141,3 +139,4 @@ export function backTooMain() {
   pagination.classList.remove('visually-hidden');
   clearFilter();
 }
+

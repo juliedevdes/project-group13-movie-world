@@ -358,8 +358,6 @@ body {
 // }
 
 .auth__list {
-  justify-content: end;
-  position: absolute;
   bottom: 10px;
   right: 15px;
 }
@@ -391,5 +389,21 @@ body {
 }
 
 .name-box {
-  margin-bottom: 8px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.user-pic {
+  margin-left: 15px;
+  position: relative;
+  border-radius: 50%;
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+}
+.auth-btns {
+  display: flex;
+  justify-content: space-between;
 }
