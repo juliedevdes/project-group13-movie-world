@@ -62,3 +62,9 @@ function yearPickerMenu() {
   }
   yearPicker.insertAdjacentHTML('beforeend', years);
 }
+
+//to clear genres select ► import yearPicker, genrePicker from refs to make it work
+export default function clearFilter() {
+  yearPicker.value = '';
+  genrePicker.value = '';
+}
