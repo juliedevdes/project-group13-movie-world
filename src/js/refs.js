@@ -27,6 +27,7 @@ const authPostRef = document.getElementById('sign-in__post');
 const authGoogleRef = document.getElementById('sign-in__google');
 const logOut = document.getElementById('log-out');
 const name = document.querySelector('.user-name');
+const userPic = document.querySelector('.user-pic');
 
 export {
   modalOpen,
@@ -58,4 +59,5 @@ export {
   authGoogleRef,
   logOut,
   name,
+  userPic,
 };

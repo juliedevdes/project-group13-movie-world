@@ -11,7 +11,9 @@ import {
   signOut,
   currentUser,
 } from 'firebase/auth';
-import { name, authPostRef, authGoogleRef, logOut } from '../refs';
+import { name, userPic, authPostRef, authGoogleRef, logOut } from '../refs';
+
+let photoURL;
 
 // import { initializeApp } from 'firebase/app';
 const firebaseConfig = {
@@ -76,6 +78,7 @@ function signingOut() {
     });
   authCurrentUser();
   name.textContent = '';
+  userPic.style.backgroundImage = '';
   // [END auth_sign_out_modular]
 }
 
@@ -100,13 +103,21 @@ function getUserProfile() {
   const auth = getAuth();
   onAuthStateChanged(auth, user => {
     if (user) {
+      authGoogleRef.classList.add('visually-hidden');
+      logOut.classList.remove('visually-hidden');
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
-      console.log(user.displayName);
+      photoURL = user.photoURL;
+      userPic.style.backgroundImage = `url("${photoURL}")`;
+
       showUsername(user);
+
       // ...
     } else {
+      authGoogleRef.classList.remove('visually-hidden');
+
+      logOut.classList.add('visually-hidden');
       // User is signed out
       // ...
     }
