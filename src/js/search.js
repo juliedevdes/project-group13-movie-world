@@ -24,7 +24,11 @@ import clearFilter from './filter-movies';
 let page = 1;
 let arr = [];
 
-// const pagination = new Pagination('#tui-pagination-container', options);
+
+
+
+
+
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
 homeBtn.addEventListener('click', backTooMain);
@@ -135,3 +139,4 @@ export function backTooMain() {
   pagination.classList.remove('visually-hidden');
   clearFilter();
 }
+
