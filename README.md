@@ -5,13 +5,13 @@
 ## How it was made ————-««
 
 It's eight-people project we were developing two weeks (from 2021 September 1th to 15th) together as
-a team. All of as are students of GoIT school "Full Stack course" and this is our final work at the
+a team. All of us are students of GoIT school "Full Stack course" and this is our final work at the
 ending of JavaScript 4-month long part.
 
 We were given some
 [technical requirements](https://docs.google.com/spreadsheets/d/1xznttn6bvxeMyIuJWg7daMGIQGBi31rfuRsaBtV0L0M/edit#gid=0).
 
-P.S. but we gone far in adding more features 💨
+P.S. but we've gone far in adding more features 💨
 
 ## What kinds of features does it have ————-««
 
@@ -24,9 +24,10 @@ P.S. but we gone far in adding more features 💨
 - change color theme for your eye comfort and save it next times you'll visit
 - instantly get you on top of the page by special button
 - sign in with your Google account
+- filter movies by genre or year
 - meet our marvelous team by hitting link in the footer ✨
 
-## Techology we've used ————-««
+## Technology we've used ————-««
 
 - [Design base](https://www.figma.com/file/lA5plQSUEbIKOSJHfuPpXO/Filmoteka?node-id=0%3A1)
 - [API "The movie database"](https://www.themoviedb.org/)
@@ -62,7 +63,7 @@ project. So, in order to maintain development process we implemented:
 
 ## How to reach us ————-««
 
-Here are names of contributors and link to their LinkedIn profiles:
+Here are names of contributors and links to their LinkedIn profiles:
 
 - [Valerii Vitenko](https://www.linkedin.com/in/leroviten/)
 - [Alexander Ponomarenko](https://www.linkedin.com/in/ponomalex/)
