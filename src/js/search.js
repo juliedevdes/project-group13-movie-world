@@ -9,6 +9,8 @@ import {
   homeBtn,
   logoLink,
   pagination,
+  genrePicker,
+  yearPicker,
 } from './refs';
 import debounce from 'lodash/debounce';
 import Spinner from './spinner';
@@ -16,6 +18,8 @@ import { cardsMarkUp } from './genres';
 import Pagination from 'tui-pagination';
 import fPagination from './pagination';
 import { fetchTopMovies } from './startpage';
+
+import clearFilter from './filter-movies';
 
 let page = 1;
 let arr = [];
@@ -129,4 +133,5 @@ export function backTooMain() {
   resetPage();
   fetchTopMovies(page);
   pagination.classList.remove('visually-hidden');
+  clearFilter();
 }
