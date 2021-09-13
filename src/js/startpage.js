@@ -25,7 +25,6 @@ export async function fetchTopMovies(page) {
     const totalResult = res.total_results;
     const totalHits = res.total_pages;
     let currentPage = res.page;
-    console.log(res.results);
     const instance = fPagination();
     instance.setItemsPerPage(20);
     instance.setTotalItems(totalResult);

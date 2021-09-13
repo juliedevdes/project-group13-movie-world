@@ -14,7 +14,7 @@ let arr = [];
 
 
 
-// const pagination = new Pagination('#tui-pagination-container', options);
+
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
 homeBtn.addEventListener('click', backTooMain);
@@ -128,3 +128,4 @@ export function backTooMain() {
   fetchTopMovies(page);
   pagination.classList.remove('visually-hidden')
 }
+
