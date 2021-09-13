@@ -24,11 +24,6 @@ import clearFilter from './filter-movies';
 let page = 1;
 let arr = [];
 
-// function clearFilterFunc() {
-//   let yearValue = '';
-//   let genreValue = '';
-// }
-
 // const pagination = new Pagination('#tui-pagination-container', options);
 
 inputRef.addEventListener('input', debounce(searchMovie, 750));
@@ -38,7 +33,6 @@ logoLink.addEventListener('click', backTooMain);
 const spinner = new Spinner();
 export function searchMovie(e) {
   e.preventDefault();
-  // clearFilterFunc();
   const movie = e.target.value;
   resetPage();
   if (movie.length > 1) {
