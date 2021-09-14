@@ -63,7 +63,7 @@ project. So, in order to maintain development process we implemented:
 
 ## Performance ————-««
 
-![Screenshot](https://github.com/leroviten/project-group13-movie-world/blob/feature-readmeUpdate/src/images/performance.png?raw=true)
+![Screenshot](https://github.com/leroviten/project-group13-movie-world/blob/main/src/images/performance.png?raw=true)
 
 ## How to run this localy ————-««
 
