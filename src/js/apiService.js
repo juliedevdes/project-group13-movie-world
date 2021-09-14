@@ -55,11 +55,6 @@ export default {
       .catch(error => console.log(error));
   },
 
-  // fetchMovies(genre, year) {
-  //   return fetch(`${POPULAR_URL}?api_key=${API_KEY}&page=${page}`)
-  //     .then(r => (r.ok ? r.json() : []))
-  //     .catch(error => console.log(error));
-  // },
   increment() {
     this.page += 1;
   },

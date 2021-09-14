@@ -1,17 +1,12 @@
 import api from './apiService';
-import cardTpl from '../templates/card-movie-home.hbs';
-import { modalOpen, gallery, inputRef, homeBtn, logoLink } from './refs';
+import { gallery, homeBtn, logoLink } from './refs';
 import Spinner from './spinner';
 import { cardsMarkUp } from './genres';
 import Pagination from 'tui-pagination';
 import fPagination from './pagination';
-import renderGallery from './render-gallery';
-import clickBtnHome from './my-library';
 import { backTooMain } from './search';
 
 const spinner = new Spinner();
-
-// document.addEventListener('DOMContentLoaded', fetchTopMovies());
 
 homeBtn.addEventListener('click', backTooMain);
 logoLink.addEventListener('click', backTooMain);

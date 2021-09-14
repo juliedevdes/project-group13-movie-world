@@ -15,7 +15,6 @@ import { name, userPic, authPostRef, authGoogleRef, logOut } from '../refs';
 
 let photoURL;
 
-// import { initializeApp } from 'firebase/app';
 const firebaseConfig = {
   apiKey: 'AIzaSyCCCNNONwncDr6dmVOTbLQ5Hi0bbqdtgm0',
   authDomain: 'project-group13-movie-world.firebaseapp.com',
@@ -27,15 +26,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
-console.log(firebase);
-// regRef.addEventListener('click', signUpWithEmailPassword);
-// authPostRef.addEventListener('click', signInWithEmailPassword);
+
 authGoogleRef.addEventListener('click', googleSignInPopup);
 logOut.addEventListener('click', signingOut);
 
-let email = 'test@example.com';
-let password = 'hunter2';
-
+// Firing a classic google sign-in pop-up:
 function googleSignInPopup() {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
@@ -48,7 +43,6 @@ function googleSignInPopup() {
       // The signed-in user info.
       const user = result.user;
       authCurrentUser();
-      // ...
     })
     .catch(error => {
       // Handle Errors here.
@@ -58,23 +52,20 @@ function googleSignInPopup() {
       const email = error.email;
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
     });
-  console.log('in');
+
   getUserProfile();
 }
 
 function signingOut() {
-  //   console.log('out');
   const auth = getAuth();
-  //   const user = auth.currentUser;
   // [START auth_sign_out]
   signOut(auth)
     .then(() => {
       // Sign-out successful.
     })
     .catch(error => {
-      // An error happened.
+      console.log(error + 'An error occurred!');
     });
   authCurrentUser();
   name.textContent = '';
@@ -112,14 +103,11 @@ function getUserProfile() {
       userPic.style.backgroundImage = `url("${photoURL}")`;
 
       showUsername(user);
-
-      // ...
     } else {
       authGoogleRef.classList.remove('visually-hidden');
 
       logOut.classList.add('visually-hidden');
       // User is signed out
-      // ...
     }
   });
   // [END auth_state_listener_modular]

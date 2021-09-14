@@ -53,8 +53,6 @@ function createCard(genre, year) {
       onMore(genre, year, currentPage);
       clearInput();
       api.increment();
-      console.log(genre);
-      console.log(currentPage);
     });
     cardsMarkUp(res.results, year);
   });

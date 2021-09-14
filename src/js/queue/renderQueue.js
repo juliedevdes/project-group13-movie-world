@@ -1,5 +1,3 @@
-// ДОПЗАДАНЕ - вывод фильмов с пагинацией (на случай большого кол-ва фильмов в библиотеке)
-
 import { queueBtn } from '../refs';
 import renderGallery from '../render-gallery';
 import getQueue from './get-queue';
