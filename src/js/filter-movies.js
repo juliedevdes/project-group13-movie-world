@@ -49,16 +49,16 @@ function createCard(genre, year) {
     instance.movePageTo(currentPage);
     instance.on('afterMove', event => {
       const currentPage = event.page;
-      onMore(genre, currentPage);
+      onMore(genre, year);
       clearInput();
       api.increment();
     });
-    cardsMarkUp(res.results, currentPage);
+    cardsMarkUp(res.results, year);
   });
 }
-async function onMore(genre, currentPage) {
+async function onMore(genre, year) {
   try {
-    const cards = await api.fetchMovies(genre, currentPage);
+    const cards = await api.fetchMovies(genre, year);
     const data = cards.results;
     clearInput();
 
