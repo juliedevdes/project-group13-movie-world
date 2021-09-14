@@ -48,9 +48,8 @@ export default {
       })
       .catch(error => console.log(error));
   },
-  fetchMovies(genre, year) {
-    this.page = 1;
-    const url = `${BASE_URL}/discover/movie?with_genres=${genre}&primary_release_year=${year}&sort_by=popularity.desc&api_key=${API_KEY}&page=${this.page}`;
+  fetchMovies(genre, year, page) {
+    const url = `${BASE_URL}/discover/movie?with_genres=${genre}&primary_release_year=${year}&sort_by=popularity.desc&api_key=${API_KEY}&page=${page}`;
     return fetch(url)
       .then(res => (res.ok ? res.json() : []))
       .catch(error => console.log(error));

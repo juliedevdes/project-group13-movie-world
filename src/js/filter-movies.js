@@ -37,10 +37,11 @@ filterInput.forEach(item => {
 });
 
 function createCard(genre, year) {
-  api.fetchMovies(genre, year).then(res => {
+  let currentPage = 1;
+  api.fetchMovies(genre, year, currentPage).then(res => {
     gallery.innerHTML = '';
 
-    const currentPage = res.page;
+    currentPage = res.page;
     const totalResult = res.total_results;
     const instance = fPagination();
     instance.setItemsPerPage(20);
@@ -48,17 +49,19 @@ function createCard(genre, year) {
     instance.setTotalItems(totalResult);
     instance.movePageTo(currentPage);
     instance.on('afterMove', event => {
-      const currentPage = event.page;
-      onMore(genre, year);
+      currentPage = event.page;
+      onMore(genre, year, currentPage);
       clearInput();
       api.increment();
+      console.log(genre);
+      console.log(currentPage);
     });
     cardsMarkUp(res.results, year);
   });
 }
-async function onMore(genre, year) {
+async function onMore(genre, year, currentPage) {
   try {
-    const cards = await api.fetchMovies(genre, year);
+    const cards = await api.fetchMovies(genre, year, currentPage);
     const data = cards.results;
     clearInput();
 
