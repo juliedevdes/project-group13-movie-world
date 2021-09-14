@@ -82,6 +82,10 @@
     width: 100%;
     margin-bottom: 10px;
   }
+
+  .trailer-btn {
+    margin-bottom: 0px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -93,6 +97,7 @@
     &__img {
       width: 264px;
       height: 373.55px;
+      margin-bottom: 0px;
     }
 
     &__section {
@@ -129,7 +134,6 @@
     &__img {
       width: 396px;
       height: 477.8px;
-      margin-bottom: 0px;
     }
 
     &__section {
