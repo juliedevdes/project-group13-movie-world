@@ -61,6 +61,10 @@ project. So, in order to maintain development process we implemented:
 - daily stand-up meetings
   - to keep in touch with everybody, discuss controversial topic and help each other when it needed
 
+## Performance ————-««
+
+![alt text](https://github.com/leroviten/[project-group13-movie-world]/blob/[main]/performance.png?raw=true)
+
 ## How to run this localy ————-««
 
 Install all dependencies once per project
