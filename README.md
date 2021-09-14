@@ -63,7 +63,7 @@ project. So, in order to maintain development process we implemented:
 
 ## Performance ————-««
 
-![alt text](https://github.com/leroviten/[project-group13-movie-world]/blob/[main]/performance.png?raw=true)
+!(https://github.com/leroviten/project-group13-movie-world/blob/main/performance.png?raw=true)
 
 ## How to run this localy ————-««
 
