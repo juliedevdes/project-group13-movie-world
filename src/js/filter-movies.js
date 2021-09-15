@@ -25,6 +25,7 @@ const spinner = new Spinner();
 myLibraryBtn.addEventListener('click', closeFilter);
 homeBtn.addEventListener('click', openFilter);
 logoLink.addEventListener('click', openFilter);
+inputRef.addEventListener('input', closeFilter);
 
 filterInput.forEach(item => {
   item.addEventListener('change', event => {
